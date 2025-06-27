@@ -1,0 +1,155 @@
+.top {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: stretch;
+  background-color: rgb(50, 50, 50);
+}
+
+.mainScroller {
+  width: 84%;
+  height: 100vh;
+  background-color: rgb(50, 50, 50);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+
+  overflow-y: auto;
+
+  padding-bottom: 4rem;
+}
+
+@media (max-width: 768px) {
+  .mainScroller {
+    width: 75%; /* or any width you want on mobile */
+  }
+}
+
+.subImageBanner {
+    width: 100%;
+    height: auto;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+
+.subBannerPic {
+    width: 100%;
+    overflow: hidden;
+    
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.subimg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.title {
+    color: white;
+    font-size: xx-large;
+    font-weight: bolder;
+
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.desc {
+    color: white;
+    font-size: medium;
+    margin-bottom: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.ContentBanner {
+    width: 100%;
+    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.tileBase {
+    width: 40%;
+    height: 40vh;
+    margin: 2%;
+    background-color: black;
+    border-radius: 1vw;
+    overflow: hidden;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    
+}
+
+.tileImgContainer {
+    width: 100%;
+    height: 60%;
+    overflow: hidden;
+    
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tileImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+.tileInfo {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.tileTitle {
+    color: white;
+    font-weight: bolder;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+
+
+
+@media (max-width: 768px) {
+  .tileBase {
+    width: 75%; /* or any width you want on mobile */
+    border-radius: 2vw; 
+  }
+
+  .tileTitle {
+    font-size: small;
+  }
+}
