@@ -31,7 +31,7 @@
 
 .ImageBanner {
     width: 100%;
-    
+    max-height: 60vh;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -41,7 +41,7 @@
 
 .BannerPic {
     width: 50%;
-    aspect-ratio: 1/1;
+    height: 100%;
     overflow: hidden;
     
 
@@ -72,6 +72,29 @@
     color: white;
     font-size: medium;
     margin-bottom: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.listDesc {
+    color: white;
+    font-size: medium;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.linkDesc {
+    color: white;
+    font-size: medium;
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.innerDesc {
+    color: white;
+    font-size: medium;
+    margin-top: 2%;
     margin-left: 5%;
     margin-right: 5%;
 }

@@ -11,40 +11,44 @@ const CarRacing = () => {
         
         <div className='ImageBanner'>
             <div className='BannerPic'>
-                <img src='/windmill_board.png' className='img'></img>
+                <img src='/car-racing.gif' className='img'></img>
             </div>
             <div className='BannerPic'>
-                <img src='/windmill_timeseries.png' className='img'></img>
+                <img src='/cartpole.gif' className='img'></img>
             </div>
         </div>
 
-        <h1 className='title'>M.S. Thesis PINN Diffusion for Windmill Motion (Ongoing)</h1>
+        <h1 className='title'>Deep Reinforcement Learning Study with Car-Racing-V3</h1>
 
-        <p className='desc'>
-            My M.S. Thesis is a Physically Informed Latent Diffusion Model (LDM) that uses a large quantity of data to predict windmill motion at the tower-top in real time for blade installation. This project is being completed with the aid of Saravanan Bhaskaran, who is generating all of the data and PINN equations for me to use in my model. 
-            The two of us presented our progress on the project at the 2nd Annual Maine AI Conference as a poster. To view the projects project as of May of 2025, download the Abstract and/or Poster below. More progress has been made since presenting at the conference in integrating PINN into the LDM. Please reach out to me if you are interested in this project and want to learn more about it!
-            I am not posting source code yet since the project is still my ongoing thesis.
+        <p className='desc' style={{textAlign:"left"}}>
+            This project applies Deep Q-Networks (DQN) to the CarRacing-v3 environment to explore reinforcement learning in high-dimensional visual and continuous action spaces. I began by testing a DQN framework on CartPole, then extended it to CarRacing by discretizing the car’s throttle, brake, and steering into 24 discrete actions.
         </p>
 
-        <div className='ContentBanner'>
-            <a href="/windmill_abstract.pdf" className="tileBase" download>
-                <div className="tileImgContainer">
-                    <img src="/windmill_abstract.png" className="tileImg"></img>
-                </div>
-                <div className="tileInfo">
-                    <h2 className="tileTitle">Abstract for 2nd Annual Maine AI Conference for poster submission</h2>
-                </div>
-            </a>
+        <p className='innerDesc' style={{textAlign:"left"}}>
+            I built a custom reward-shaping system that encourages staying on the road, maintaining smooth velocity, and penalizes sharp or unnecessary turns. The agent uses image inputs and also receives auxiliary sensor data like orientation and velocity to support better decision-making.
+        </p>
 
-            <a href="/windmill_poster.png" className="tileBase" download>
-                <div className="tileImgContainer">
-                    <img src="/windmill_poster.png" className="tileImg"></img>
-                </div>
-                <div className="tileInfo">
-                    <h2 className="tileTitle">Poster for 2nd Annual Maine AI Conference for poster submission</h2>
-                </div>
-            </a>
-        </div>
+        <p className='innerDesc' style={{textAlign:"left"}}>
+            To further improve driving performance, I implemented a truncated rollout planner. At every frame:
+            the agent simulates all 24 actions for 40 steps using the trained DQN, evaluates which leads to the highest cumulative reward, and then executes that action — leading to dramatically improved stability and responsiveness.
+        </p>
+
+        <p  className='innerDesc' style={{textAlign:"left"}}>
+            After initial training, I found that the model performed well on left turns but struggled on right turns due to the track’s default winding direction. To address this, I am currently enhancing training by randomly flipping the car’s orientation at episode start, effectively reversing the track direction. This helps the agent generalize better across all turning scenarios.
+        </p>
+
+        <h4 className='listDesc' style={{textAlign:"left"}}>Key Features</h4>
+        <ul className='listDesc' style={{textAlign:"left"}}>
+            <li className='listDesc' style={{textAlign:"left"}}>Deep Q-Network (DQN) with image inputs</li>
+            <li className='listDesc' style={{textAlign:"left"}}>Discrete action mapping (24 combinations)</li>
+            <li className='listDesc' style={{textAlign:"left"}}>Reward shaping for speed, road position, and smooth control</li>
+            <li className='listDesc' style={{textAlign:"left"}}>Auxiliary state inputs: orientation, speed, steering angle</li>
+            <li className='listDesc' style={{textAlign:"left"}}>Episode truncation on prolonged off-road behavior</li>
+            <li className='listDesc' style={{textAlign:"left"}}><strong>Rollout planning</strong> with 40-step single-lookahead per action</li>
+            <li className='listDesc' style={{textAlign:"left"}}><strong>Ongoing work:</strong> randomized car orientation to improve generalization</li>
+        </ul>
+
+        <a className='linkDesc' style={{color:"cyan", backgroundColor:"rgb(100, 100, 100)", padding:"0.4vh", borderRadius:"2vw"}} href="https://github.com/DyllonDunton1/Car-Racing-V3-DQN">Find the source code for this project at our GitHub!</a>
         
         
       </div>

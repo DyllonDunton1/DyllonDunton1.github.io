@@ -56,7 +56,7 @@
 
 
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   .tileBase {
     width: 75%; /* or any width you want on mobile */
     border-radius: 2vw; 

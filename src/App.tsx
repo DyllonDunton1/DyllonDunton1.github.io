@@ -36,15 +36,15 @@ function App() {
           </p>
           <br/>
           <p>
-            When I’m not lifting or coding, I enjoy spending time with friends hiking and birdwatching in Maine’s trails and woods. I also have an orange cat named Oscar, who’s pretty chill and occasionally supervises my code reviews.
+            When I’m not lifting or coding, I enjoy spending time with friends hiking and birdwatching in Maine’s trails and woods. I also have an orange cat named Oscar, who’s pretty chill and occasionally debugs my code with me.
           </p>
         </section>
 
         <section id="contact" className='tile'>
           <h2>Contact</h2>
           <p>Email: dyllon.dunton@maine.edu</p>
-          <p>GitHub: <a href="https://github.com/DyllonDunton1">DyllonDunton1</a></p>
-          <p>LinkedIn: <a href="https://www.linkedin.com/in/dyllon-dunton-47ab8b1b8/">dyllon-dunton</a></p>
+          <p>GitHub: <a style={{color:"cyan", backgroundColor:"rgb(100, 100, 100)", padding:"0.4vh", borderRadius:"2vw"}} href="https://github.com/DyllonDunton1">DyllonDunton1</a></p>
+          <p>LinkedIn: <a style={{color:"cyan", backgroundColor:"rgb(100, 100, 100)", padding:"0.4vh", borderRadius:"2vw"}} href="https://www.linkedin.com/in/dyllon-dunton-47ab8b1b8/">dyllon-dunton</a></p>
         </section>
 
         <section id="projects" className='tile'>

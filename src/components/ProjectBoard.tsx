@@ -19,7 +19,7 @@ const projects = [
     {
         staticUrl: "aerialplan.png",
         gifUrl: "aerialplan.png",
-        title: "Aerial Terrain Pathing via Depth and Segmentation", 
+        title: "Rover Path Naviagation via Aerial Imagery", 
         pagePath: "/projects/aerialplan",
     },
     {
@@ -27,6 +27,12 @@ const projects = [
         gifUrl: "car-racing.gif",
         title: "Deep Reinforcement Learning Study with Car-Racing-V3", 
         pagePath: "/projects/carracing",
+    },
+    {
+        staticUrl: "cluster_photo.jpg",
+        gifUrl: "cluster_photo.jpg",
+        title: "BeagleBone Black 8-Node Cluster Undergraduate Research", 
+        pagePath: "/projects/cluster",
     },
     {
         staticUrl: "robocoms.png",
@@ -40,6 +46,12 @@ const projects = [
         title: "Jetbot Soccer via RRT* Path Planning and AruCo Tag Detection", 
         pagePath: "/projects/robosoccer",
     },
+    {
+        staticUrl: "eskate_v2.jpg",
+        gifUrl: "eskate_v1.gif",
+        title: "Electric Skateboard V1 and V2", 
+        pagePath: "/projects/eskate",
+    }, 
 ]
 
 const ProjectBoard = () => {
@@ -54,6 +66,14 @@ const ProjectBoard = () => {
           pagePath={proj.pagePath}
         />
       ))}
+      <a href="/Dunton-Dyllon-Projects-June-2025.pdf"className="tileBase" download>
+        <div className="tileImgContainer">
+          <img src="/project-page-img.png" className="tileImg"></img>
+        </div>
+        <div className="tileInfo">
+          <h2 className="tileTitle">Additional Project Page (Internship Projects I Can't Show Code For)</h2>
+        </div>
+      </a>
     </div>
   )
 }

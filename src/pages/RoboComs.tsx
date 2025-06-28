@@ -11,37 +11,46 @@ const RoboComs = () => {
         
         <div className='ImageBanner'>
             <div className='BannerPic'>
-                <img src='/windmill_board.png' className='img'></img>
+                <img src='/robocoms.gif' className='img'></img>
             </div>
             <div className='BannerPic'>
-                <img src='/windmill_timeseries.png' className='img'></img>
+                <img src='/com_motors.gif' className='img'></img>
             </div>
         </div>
 
-        <h1 className='title'>M.S. Thesis PINN Diffusion for Windmill Motion (Ongoing)</h1>
+        <h1 className='title'>Robot Communication for Umaine Black Bear Robotics Club (Completed with Help from <a style={{color:"cyan", backgroundColor:"rgb(100, 100, 100)", padding:"0.4vh", borderRadius:"2vw"}} href="https://www.linkedin.com/in/jacob-wildes-88923b246/">Jacob Wildes</a>)</h1>
 
-        <p className='desc'>
-            My M.S. Thesis is a Physically Informed Latent Diffusion Model (LDM) that uses a large quantity of data to predict windmill motion at the tower-top in real time for blade installation. This project is being completed with the aid of Saravanan Bhaskaran, who is generating all of the data and PINN equations for me to use in my model. 
-            The two of us presented our progress on the project at the 2nd Annual Maine AI Conference as a poster. To view the projects project as of May of 2025, download the Abstract and/or Poster below. More progress has been made since presenting at the conference in integrating PINN into the LDM. Please reach out to me if you are interested in this project and want to learn more about it!
-            I am not posting source code yet since the project is still my ongoing thesis.
+        <p className='innerDesc' style={{textAlign:"left"}}>
+            This project was the software communication backbone for the <strong>University of Maine Black Bear Robotics</strong> entry in the 
+            <strong> 2023 NASA Lunabotics Competition</strong>. Designed to control and monitor the team’s lunar excavation robot, this system is
+            still actively in use and easily adaptable for future robots with minimal configuration.
+        </p>
+        <p className='innerDesc' style={{textAlign:"left"}}>
+            The software is built on <strong>ROS2 Foxy</strong>, running across a <strong>wireless network between a Raspberry Pi 4B onboard the robot and a
+            laptop base station</strong>. It provides a seamless communication pipeline between the user and robot using ROS2 nodes and serial communication.
         </p>
 
-        <div className='ContentBanner'>
-            <a href="/windmill_abstract.pdf" className="tileBase" download>
-                <div className="tileImgContainer">
-                    <img src="/windmill_abstract.png" className="tileImg"></img>
-                </div>
-                <div className="tileInfo">
-                    <h2 className="tileTitle">Abstract for 2nd Annual Maine AI Conference for poster submission</h2>
-                </div>
-            </a>
+        <ul className='listDesc' style={{textAlign:"left"}}>
+            <li className='listDesc' style={{textAlign:"left"}}><strong>Real-Time Control via Keyboard</strong>: Drive the robot with arrow keys, and use hotkeys to trigger auger spin, dumping, and more.</li>
+            <li className='listDesc' style={{textAlign:"left"}}><strong>Live Dual-Camera Feeds</strong>: Real-time, low-latency video streaming from front and rear cameras to the laptop.</li>
+            <li className='listDesc' style={{textAlign:"left"}}><strong>Diagnostic Interface</strong>: See motor encoder values, sensor readings, and system status in real time.</li>
+            <li className='listDesc' style={{textAlign:"left"}}><strong>Hardware Integration</strong>: Raspberry Pi communicates via serial to an Arduino, which controls all motors using PWM signals.</li>
+            <li className='listDesc' style={{textAlign:"left"}}><strong>Reusable Framework</strong>: Designed for easy reuse on future robots with minimal reconfiguration.</li>
+        </ul>
 
-            <a href="/windmill_poster.png" className="tileBase" download>
+        <p className='desc' style={{textAlign:"left"}}>
+            This system enabled smooth operation of the robot during all phases of development and competition, offering reliable teleoperation, diagnostics, and modularity.
+        </p>
+
+        <a className='linkDesc' style={{color:"cyan", backgroundColor:"rgb(100, 100, 100)", padding:"0.4vh", borderRadius:"2vw"}} href="https://github.com/DyllonDunton1/roboComs">Find the source code for this project at our GitHub!</a>
+
+        <div className='ContentBanner'>
+            <a href="https://www.instagram.com/blackbearrobotics/" className="tileBase">
                 <div className="tileImgContainer">
-                    <img src="/windmill_poster.png" className="tileImg"></img>
+                    <img src="/bbr_bot_2025.jpeg" className="tileImg"></img>
                 </div>
                 <div className="tileInfo">
-                    <h2 className="tileTitle">Poster for 2nd Annual Maine AI Conference for poster submission</h2>
+                    <h2 className="tileTitle">Go see what the Umaine Black Bear Robotics Club is up to!</h2>
                 </div>
             </a>
         </div>

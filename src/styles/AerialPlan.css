@@ -29,19 +29,18 @@
   }
 }
 
-.ImageBanner {
+.roverImageBanner {
     width: 100%;
-    
+    height: auto;
+    max-height: 60vh;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: start;
     align-items: center;
 }
 
-.BannerPic {
-    width: 50%;
-    aspect-ratio: 1/1;
+.roverBannerPic {
+    width: 100%;
     overflow: hidden;
     
 
@@ -50,7 +49,7 @@
     align-items: center;
 }
 
-.img {
+.roverimg {
     width: 100%;
     height: 100%;
     object-fit: cover;
