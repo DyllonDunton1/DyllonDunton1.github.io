@@ -55,7 +55,7 @@ const Navbar = () => {
             Projects
           </a>
         </li>
-        <li className='navButton'><a href="/Dunton-Dyllon-Resume-October-2025.pdf" className='navButtonLink' style={{borderBottom: '1px solid rgb(156, 156, 156)'}} download>Resume</a></li>
+        <li className='navButton'><a href="/Dunton-Dyllon-Resume-October21-2025.pdf" className='navButtonLink' style={{borderBottom: '1px solid rgb(156, 156, 156)'}} download>Resume</a></li>
       </ul>
     </nav>
   )

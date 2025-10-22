@@ -28,11 +28,21 @@ const Windmill = () => {
 
         <p className='desc'>
             My M.S. Thesis is a Physically Informed Latent Diffusion Model (LDM) that uses a large quantity of data to predict windmill motion at the tower-top in real time for blade installation. This project is being completed with the aid of <a style={{color:"cyan", backgroundColor:"rgb(100, 100, 100)", padding:"0.4vh", borderRadius:"2vw"}} href="https://www.researchgate.net/profile/Saravanan-Bhaskaran">Saravanan Bhaskaran</a>, who is generating all of the data and PINN equations for me to use in my model. 
-            The two of us presented our progress on the project at the 2nd Annual Maine AI Conference as a poster. To view the projects project as of May of 2025, download the Abstract and/or Poster below. More progress has been made since presenting at the conference in integrating PINN into the LDM. Please reach out to me if you are interested in this project and want to learn more about it!
+            The two of us presented our progress on the project in early 2025 at the 2nd Annual Maine AI Conference as a poster, and will be presenting our updated work in November at the IMECE 2025 Conference in Memphis. To view the projects project as of May of 2025, download the Abstract and/or Poster below. More progress has been made since presenting at the conference in integrating PINN into the LDM. Please reach out to me if you are interested in this project and want to learn more about it!
             I am not posting source code yet since the project is still my ongoing thesis.
         </p>
 
         <div className='ContentBanner'>
+
+            <a href="/Dunton-Dyllon-IMECE-Conference-Poster.pptx" className="tileBase" download>
+                <div className="tileImgContainer">
+                    <img src="/Dunton-Dyllon-IMECE-Conference-Poster.png" className="tileImg"></img>
+                </div>
+                <div className="tileInfo">
+                    <h2 className="tileTitle">Poster for IMECE 2025 Graduate Student Poster Competition (NSF)</h2>
+                </div>
+            </a>
+
             <a href="/windmill_abstract.pdf" className="tileBase" download>
                 <div className="tileImgContainer">
                     <img src="/windmill_abstract.png" className="tileImg"></img>
