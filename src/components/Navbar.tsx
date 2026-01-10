@@ -22,6 +22,7 @@ const Navbar = () => {
         </div>
         <h4 style={{ marginTop: '10%' }}>Dyllon</h4>
         <h4>Dunton</h4>
+        <p style={{ margin: '10%' }} >Applied ML & Robotics Engineer</p>
       </div>
       
       <ul style={{ width: '100%', height: '40%', display: 'flex', flexDirection: 'column', justifyContent: 'center', listStyle: 'none', margin: 0 }}>
@@ -42,7 +43,7 @@ const Navbar = () => {
             }} 
             className='navButtonLink'
           >
-            Contacts
+            Contact Me
           </a>
         </li>
         <li className='navButton'>

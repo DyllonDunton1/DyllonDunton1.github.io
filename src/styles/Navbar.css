@@ -1,5 +1,5 @@
 nav {
-    width: 16%;
+    width: 25%;
     top:0;
     left:0;
     height:100%;
@@ -7,15 +7,14 @@ nav {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    background-color: #000000;
-    color: white;
+    color: black;
     position: fixed;
     overflow-y: auto;
 }
 
 @media (max-width: 768px) {
   nav {
-    width: 25%; /* or any width you want on mobile */
+    width: 25%; 
   }
 }
 
@@ -39,7 +38,7 @@ nav {
     align-items: center;
 
     border-radius: 5%;
-    border: 3px solid white;
+    border: 1px solid black;
     overflow: hidden;
 }
 
@@ -51,7 +50,7 @@ nav {
 }
 
 .navButton {
-    color: white;
+    color: black;
     text-decoration: none;
     font-weight: bold;
     border-top: 1px solid rgb(156, 156, 156);
