@@ -8,9 +8,10 @@ interface TileProps{
   gifUrl: string,
   title: string,
   pagePath: string,
+  orientation: string,
 }
 
-const Tile = ({staticUrl, gifUrl, title, pagePath}: TileProps) => {
+const Tile = ({staticUrl, gifUrl, title, pagePath, orientation}: TileProps) => {
 
   const [imgSrc, setImgSrc] = useState(staticUrl);
   //const [isHovered, setIsHovered] = useState(false)
@@ -28,14 +29,17 @@ const Tile = ({staticUrl, gifUrl, title, pagePath}: TileProps) => {
     setImgSrc(staticUrl);
   };
 
+  let class_name_full_img = "tileImg " + orientation;
+  let class_name_full_container = "tileImgContainer " + orientation + "Container";
+
   return (
     <Link to={pagePath} 
       className="tileBase"
       onMouseEnter={() => handleMouseEnter()}  
       onMouseLeave={() => handleMouseLeave()} 
     >
-      <div className="tileImgContainer">
-        <img src={imgSrc} className="tileImg"></img>
+      <div className={class_name_full_container}>
+        <img src={imgSrc} className={class_name_full_img}></img>
       </div>
       <div className="tileInfo">
         <h2 className="tileTitle">{title}</h2>

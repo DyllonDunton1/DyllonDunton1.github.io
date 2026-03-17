@@ -1,7 +1,7 @@
 import '../styles/Navbar.css'
 
 const Navbar = () => {
-
+/*
   function scrollToSection(id: string) {
     const target = document.getElementById(id);
     const scroller = document.querySelector('.mainScroller');
@@ -12,7 +12,7 @@ const Navbar = () => {
       });
     }
 }
-
+*/
 
   return (
     <nav>
@@ -20,44 +20,20 @@ const Navbar = () => {
         <div className='mugshot'>
             <img src="/mugshot.png" className='mugshotImage'></img>
         </div>
-        <h4 style={{ marginTop: '10%' }}>Dyllon</h4>
-        <h4>Dunton</h4>
-        <p style={{ margin: '10%' }} >Applied ML & Robotics Engineer</p>
       </div>
-      
-      <ul style={{ width: '100%', height: '40%', display: 'flex', flexDirection: 'column', justifyContent: 'center', listStyle: 'none', margin: 0 }}>
-        <li className='navButton'>
-          <a onClick={(e) => {
-              e.preventDefault();
-              scrollToSection('about');
-            }} 
-            className='navButtonLink'
-          >
-            About
-          </a>
-        </li>
-        <li className='navButton'>
-          <a onClick={(e) => {
-              e.preventDefault();
-              scrollToSection('contact');
-            }} 
-            className='navButtonLink'
-          >
-            Contact Me
-          </a>
-        </li>
-        <li className='navButton'>
-          <a onClick={(e) => {
-              e.preventDefault();
-              scrollToSection('projects');
-            }} 
-            className='navButtonLink'
-          >
-            Projects
-          </a>
-        </li>
-        <li className='navButton'><a href="/Dunton-Dyllon-Resume-October21-2025.pdf" className='navButtonLink' style={{borderBottom: '1px solid rgb(156, 156, 156)'}} download>Resume</a></li>
-      </ul>
+      <div className='identify-text'>
+        <h2 style={{ color: "black"}}>Dyllon Dunton</h2>
+        <p>Graudate Researcher</p>
+        <p>UMO M.S. Candidate</p>
+        <p style={{ marginBottom: '5%' }} >Applied ML & Robotics Engineer</p>
+        <p><i className="fa-solid fa-envelope linkIcon" style={{paddingRight: '1%'}}/><span className="linker" onClick={() => {navigator.clipboard.writeText("dyllon.dunton@maine.edu");alert("Email copied!");}} >dyllon.dunton@maine.edu</span></p>
+        <p style={{ marginBottom: '5%' }}><i className="fa-solid fa-location-dot linkIcon" style={{paddingRight: '2%'}}/>Pittsfield, Maine (04967)</p>
+        <p><i className="fa-brands fa-github linkIcon" style={{paddingRight: '1%'}}/>{" "}<a href="https://github.com/DyllonDunton1" className='linker'>DyllonDunton1</a></p>
+        <p><i className="fa-brands fa-linkedin linkIcon" style={{paddingRight: '1%'}}/>{" "}<a href="https://www.linkedin.com/in/dyllon-dunton-47ab8b1b8/" className='linker'>dyllon-dunton</a></p>
+        <p><i className="fa-solid fa-file-arrow-down linkIcon" style={{paddingRight: '1%'}}/>{" "}<a href="/Dunton-Dyllon-Resume-Jan2026-Base.pdf" className='linker'  download>Resume</a></p>
+      </div>
+
+  
     </nav>
   )
 }

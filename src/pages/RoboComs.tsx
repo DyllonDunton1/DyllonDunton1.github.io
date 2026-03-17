@@ -18,7 +18,7 @@ const RoboComs = () => {
             </div>
         </div>
 
-        <h1 className='title'>Robot Communication for Umaine Black Bear Robotics Club (Completed with Help from <a style={{color:"cyan", backgroundColor:"rgb(100, 100, 100)", padding:"0.4vh", borderRadius:"2vw"}} href="https://www.linkedin.com/in/jacob-wildes-88923b246/">Jacob Wildes</a>)</h1>
+        <h1 className='title'>Robot Communication for Umaine Black Bear Robotics Club (Completed with Help from <a  className='linker' href="https://www.linkedin.com/in/jacob-wildes-88923b246/">Jacob Wildes</a>)</h1>
 
         <p className='innerDesc' style={{textAlign:"left"}}>
             This project was the software communication backbone for the <strong>University of Maine Black Bear Robotics</strong> entry in the 
@@ -42,7 +42,7 @@ const RoboComs = () => {
             This system enabled smooth operation of the robot during all phases of development and competition, offering reliable teleoperation, diagnostics, and modularity.
         </p>
 
-        <a className='linkDesc' style={{color:"cyan", backgroundColor:"rgb(100, 100, 100)", padding:"0.4vh", borderRadius:"2vw"}} href="https://github.com/DyllonDunton1/roboComs">Find the source code for this project at our GitHub!</a>
+        <a className='linkDesc linker' href="https://github.com/DyllonDunton1/roboComs">Find the source code for this project at our GitHub!</a>
 
         <div className='ContentBanner'>
             <a href="https://www.instagram.com/blackbearrobotics/" className="tileBase">

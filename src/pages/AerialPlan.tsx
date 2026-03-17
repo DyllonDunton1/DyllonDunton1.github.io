@@ -9,50 +9,39 @@ const AerialPlan = () => {
 
       <div className='mainScroller'>
         
-        <div className='roverImageBanner'>
-            <div className='roverBannerPic'>
-                <img src='/rover_nav_banner.png' className='roverimg'></img>
-            </div>
+        <div style={{width: '100%', height: 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center'}}>
+            <img src='/rover_nav_banner.png' style={{border: '0.2rem solid gray', borderRadius: '0.5rem', width: '100%', textAlign: 'center'}}></img>
         </div>
+        <br /><br />
 
-        <h1 className='title'>Rover Path Naviagation via Aerial Imagery (Completed with <a style={{color:"cyan", backgroundColor:"rgb(100, 100, 100)", padding:"0.4vh", borderRadius:"2vw"}} href="https://www.linkedin.com/in/sophie-walden-1227b9233/">Sophie Walden</a>)</h1>
+
+        <h1 className='title'>Rover Path Navigation via Aerial Imagery</h1>
+        <p className='subtitle'>University of Maine – COS 573</p>
 
         <p className='desc'>
-            Automatic navigation is a field that is hard for
-            land-based rovers because they are only able to scan their
-            immediate surroundings. This paper proposes an
-            alternative solution using drone footage of the location to
-            create a 3D scan of the environment. This scan includes
-            using a depth estimator ZoeDepth to create a heightmap
-            and a self-built UNet model to create a segmentation map.
-            The segmentation map describes different surfaces the
-            rover might interact with such as vegetation, water, roads,
-            and more. From this, we created a pipeline where you can
-            supply a single mp4 of top-down drone footage and we
-            are able to create a 3D interactive visualization for you to
-            see a rover's path through the footage
-
-            An annual University Rover Challenge from the Mars
-            Society brings robotics teams together to make new
-            systems to guide rovers on Mars terrain. In recent year’s
-            competitions, a couple of teams made a new
-            augmentation to their strategies: using an aerial drone to
-            accompany the rover with the sole purpose of aiding path
-            planning. This allowed the teams piloting the drones to
-            plan an optimal path for the rover around challenging
-            terrain. What this paper proposes comes from a similar
-            approach, but aims to work with top-down drone footage
-            to make explorable visualizations of the mapped terrain to
-            guide these teams with making planning decisions. This is
-            a precursor to a system that will automatically guide
-            rovers along the optimal planned path.
-
-            Check out the paper and presentation to find out more about how the model works and it's performance. The video stitching, Zoedepth integration, and the segmentation U-net model were built by me, while the A* path planning and 3D interactive visualization were built by Sophie Walden.
+        <b>Why?</b> Autonomous ground vehicles are fundamentally constrained by limited local perception, which makes long-range navigation over unknown terrain difficult and risky. Recent robotics research and competition teams have shown that pairing rovers with aerial drones can dramatically improve situational awareness and planning. This project explores that idea by using top-down drone footage to reconstruct a traversable representation of terrain, enabling informed path planning before a rover ever moves. The broader goal is to reduce uncertainty, improve safety, and move toward autonomous navigation in complex outdoor environments.
+        <br /><br />
+        I designed and implemented the <b>core perception and mapping pipeline</b>, converting a single MP4 of drone footage into structured terrain representations suitable for planning. My work included panoramic video stitching using OpenCV, monocular depth estimation with ZoeDepth to generate heightmaps, and the design and training of a <b>custom U-Net semantic segmentation model</b> built on a ResNet-34 encoder. I constructed a large training dataset from high-resolution aerial imagery, trained the model to classify terrain types, and developed an overlap-and-vote aggregation strategy to eliminate patch-boundary artifacts in large-scale semantic maps. These outputs formed the foundational inputs required for downstream path planning and visualization.
+        <br /><br />
+        <b>Collaboration:</b> The A* path-planning algorithm and the Three.js-based 3D visualization were completed with{" "}
+        <a className='linker' href="https://www.linkedin.com/in/sophie-walden-1227b9233/">
+            Sophie Walden
+        </a>
+        .
         </p>
 
-        <a className='desc' style={{color:"cyan", backgroundColor:"rgb(100, 100, 100)", padding:"0.4vh", borderRadius:"2vw"}}  href="https://github.com/DyllonDunton1/Height_Map_UNET">Find the source code for this project at our GitHub!</a>
-
+        
         <div className='ContentBanner'>
+
+            <a href="https://github.com/DyllonDunton1/Height_Map_UNET" className="tileBase" download>
+                <div className="tileImgContainer">
+                    <img src="/Github_Mark.png" className="tileImg"></img>
+                </div>
+                <div className="tileInfo">
+                    <h2 className="tileTitle">Github Repository</h2>
+                </div>
+            </a>
+
             <a href="/Dunton-Walden-COS573-Final-Report.pdf" className="tileBase" download>
                 <div className="tileImgContainer">
                     <img src="/rover_paper.png" className="tileImg"></img>

@@ -1,44 +1,47 @@
 nav {
-    width: 25%;
-    top:0;
-    left:0;
+    width: 35%;
     height:100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
-    color: black;
-    position: fixed;
-    overflow-y: auto;
+    align-items: flex-start;
+    overflow: hidden;
+    font-size: 1.1rem;
+    padding-top: 6vh;   /* gentle push */
+    padding-bottom: 6vh;
+    position: sticky;
+    
 }
 
-@media (max-width: 768px) {
-  nav {
-    width: 25%; 
-  }
-}
 
 .identify {
-    width: 100%;
-    height: 40%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20%;
-    margin-bottom: 10%;
+  width: 100%;
+  margin: 0;         
+  text-align: left;
+  flex: 0 0 auto;
 }
+.identify-text {
+  width: 100%;
+  margin: 0;         
+  text-align: left;
+  flex: 0 0 auto;
+  padding-top: 3vh;   /* gentle push */
+    padding-bottom: 6vh;
+}
+
 
 .mugshot {
 
     width: 80%;
     aspect-ratio: 1/1;
+    min-width: 140px;
+    min-height: 140px; 
+
     display: flex;
     justify-content: center;
     align-items: center;
 
     border-radius: 5%;
-    border: 1px solid black;
     overflow: hidden;
 }
 
@@ -49,35 +52,66 @@ nav {
     display: block;
 }
 
-.navButton {
-    color: black;
-    text-decoration: none;
-    font-weight: bold;
-    border-top: 1px solid rgb(156, 156, 156);
-    border-right: 4px solid black;
-    background-color: rgb(0, 0, 0);
+@media (max-width: 768px) {
+  nav {
     width: 100%;
-    height: 25%;
-    
+    height: auto;
+    position: static;
+    box-sizing: border-box;
+    padding: 12px 16px;
+    font-size: 0.8rem;
+
+    display: grid;
+    grid-template-columns: 1fr auto; /* text | photo */
+    align-items: start;
+    column-gap: 12px;
+
     display: flex;
-    justify-content: center;
-    align-items: center;
-}
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: flex-start;
 
-.navButton:hover {
-    border-right: 4px solid #03c0ff;
-    background-color: rgb(99, 99, 99);
-}
+    overflow: visible; /* don't clip */
+  }
 
-.navButtonLink {
-    color: white;
-    text-decoration: none;
+  .identify {
+    width: auto;
+    min-width: 0; /* CRITICAL: allow grid cell to shrink */
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  .identify-text {
+    width: auto;
+    min-width: 0; /* CRITICAL: allow grid cell to shrink */
+    margin: 0;
+    padding-top: 0;   /* gentle push */
+    padding-bottom: 0;
+    max-width:50vw;
+  }
+
+  .mugshot {
+    max-width: 30vw;   /* or 110px if you want bigger */
+    max-height: 300px;
+    border-radius: 8px;
+    overflow: hidden;
+    justify-self: flex-start; /* pin to right */
+  }
+
+  .mugshotImage {
     width: 100%;
     height: 100%;
-    font-weight: bolder;
+    object-fit: cover;
+    display: block;
+  }
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  /* CRITICAL: prevent long links from forcing overflow */
+  .identify-text a,
+  .identify-text p {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
 }
 

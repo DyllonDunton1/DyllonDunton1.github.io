@@ -1,8 +1,8 @@
 .tileBase {
-    width: 40%;
+    width: 48%;
     height: 40vh;
-    margin: 2%;
-    background-color: black;
+    margin-top: 2%;
+    background-color: rgb(44, 44, 44);
     border-radius: 1vw;
     overflow: hidden;
     
@@ -34,6 +34,37 @@
     display: block;
 }
 
+.landscapeWhite{
+    width: 90%;
+    height: auto;
+}
+
+.landscapeWhiteContainer{
+    background-color: white;
+}
+
+.portraitWhite{
+    height: 100%;
+    width: auto;
+}
+
+.portraitWhiteContainer{
+    background-color: white;
+}
+
+.landscapeClear{
+    width: 100%;
+    height: auto;
+}
+
+.portraitClear{
+    height: 100%;
+    width: auto;
+    border-radius: 1.2rem;
+}
+
+
+
 
 .tileInfo {
     width: 100%;
@@ -42,11 +73,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
 .tileTitle {
     color: white;
     font-weight: bolder;
+    font-size:1rem;
     margin-top: 5%;
     margin-bottom: 5%;
     margin-left: 5%;
@@ -56,10 +89,12 @@
 
 
 
-@media (max-width: 1000px) {
+@media (max-width: 768px) {
   .tileBase {
-    width: 75%; /* or any width you want on mobile */
+    width: 100%; /* or any width you want on mobile */
     border-radius: 2vw; 
+    margin-top: 5%;
+    height: 50vh;
   }
 
   .tileTitle {

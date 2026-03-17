@@ -49,7 +49,7 @@ const RoboSoccer = () => {
             Once the robot reaches the target position and orientation behind the ball, it drives forward to push the ball through the goal. This system worked reliably and served as an effective study of perception-driven path planning in constrained environments.
         </p>
 
-        <a className='linkDesc' style={{color:"cyan", backgroundColor:"rgb(100, 100, 100)", padding:"0.4vh", borderRadius:"2vw"}} href="https://github.com/DyllonDunton1/Smooth_Soccer">Find the source code for this project at our GitHub!</a>
+        <a className='linkDesc linker' href="https://github.com/DyllonDunton1/Smooth_Soccer">Find the source code for this project at our GitHub!</a>
        
       </div>
     </div>

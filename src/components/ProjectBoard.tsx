@@ -5,52 +5,67 @@ import Tile from './Tile'
 
 const projects = [
     {
-        staticUrl: "windmill_board.png",
-        gifUrl: "windmill_board.png",
-        title: "M.S. Thesis PINN Diffusion for Windmill Motion (Ongoing)", 
+        staticUrl: "ldm-overview.png",
+        gifUrl: "ldm-overview.png",
+        title: "Physics-Informed Latent Diffusion Modeling for Offshore Wind Turbine Motion", 
         pagePath: "/projects/windmill",
+        orientation: "landscapeWhite",
+    },
+    {
+        staticUrl: "transcript/sample.jpg",
+        gifUrl: "transcript/sample.jpg",
+        title: "RAGAI Transcript Reader: AI-Driven Academic Transcript Parsing", 
+        pagePath: "/projects/transcript",
+        orientation: "as_is",
     },
     {
         staticUrl: "submarine.png",
         gifUrl: "submarine.png",
-        title: "Submarine Capstone (Ongoing)", 
+        title: "Submersible Drone for Hull Inspection", 
         pagePath: "/projects/submarine",
+        orientation: "landscapeClear",
+    },
+    {
+        staticUrl: "carracing.png",
+        gifUrl: "carracing/gifs/comparison.gif",
+        title: "Deep Reinforcement Learning Study with Car-Racing-V3", 
+        pagePath: "/projects/carracing",
+        orientation: "landscapeClear",
     },
     {
         staticUrl: "aerialplan.png",
         gifUrl: "aerialplan.png",
         title: "Rover Path Naviagation via Aerial Imagery", 
         pagePath: "/projects/aerialplan",
-    },
-    {
-        staticUrl: "carracing.png",
-        gifUrl: "car-racing.gif",
-        title: "Deep Reinforcement Learning Study with Car-Racing-V3", 
-        pagePath: "/projects/carracing",
+        orientation: "portraitClear",
     },
     {
         staticUrl: "cluster_photo.jpg",
         gifUrl: "cluster_photo.jpg",
         title: "BeagleBone Black 8-Node Cluster Undergraduate Research", 
         pagePath: "/projects/cluster",
+        orientation: "as_is",
     },
     {
         staticUrl: "robocoms.png",
         gifUrl: "robocoms.gif",
         title: "Robot Communication for Umaine Black Bear Robotics Club", 
         pagePath: "/projects/robocoms",
+        orientation: "as_is",
     },
     {
         staticUrl: "robosoccer.png",
         gifUrl: "robosoccer.gif",
         title: "Jetbot Soccer via RRT* Path Planning and AruCo Tag Detection", 
         pagePath: "/projects/robosoccer",
+        orientation: "as_is",
     },
     {
         staticUrl: "eskate_v2.jpg",
         gifUrl: "eskate_v1.gif",
         title: "Electric Skateboard V1 and V2", 
         pagePath: "/projects/eskate",
+        orientation: "as_is",
     }, 
 ]
 
@@ -58,12 +73,13 @@ const ProjectBoard = () => {
   return (
     <div className="projectBoard">
       {projects.map((proj, idx) => (
-        <Tile 
+        <Tile
           key={idx}
           title={proj.title}
           staticUrl={proj.staticUrl}
           gifUrl={proj.gifUrl}
           pagePath={proj.pagePath}
+          orientation={proj.orientation}
         />
       ))}
       <a href="/Dunton-Dyllon-Projects-June-2025.pdf"className="tileBase" download>
