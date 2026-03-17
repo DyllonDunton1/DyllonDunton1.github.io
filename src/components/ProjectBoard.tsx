@@ -5,8 +5,8 @@ import Tile from './Tile'
 
 const projects = [
     {
-        staticUrl: "ldm-overview.png",
-        gifUrl: "ldm-overview.png",
+        staticUrl: "windmill/ldm-overview.png",
+        gifUrl: "windmill/ldm-overview.png",
         title: "Physics-Informed Latent Diffusion Modeling for Offshore Wind Turbine Motion", 
         pagePath: "/projects/windmill",
         orientation: "landscapeWhite",
