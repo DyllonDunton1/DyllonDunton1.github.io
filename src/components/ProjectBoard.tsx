@@ -5,9 +5,9 @@ import Tile from './Tile'
 
 const projects = [
     {
-        staticUrl: "windmill/ldm-overview.png",
-        gifUrl: "windmill/ldm-overview.png",
-        title: "Physics-Informed Latent Diffusion Modeling for Offshore Wind Turbine Motion", 
+        staticUrl: "windmill/ldm_model.png",
+        gifUrl: "windmill/ldm_model.png",
+        title: "Reduced-Order Prediction of Offshore Wind Turbine Motion Using Generative AI (M.S. Thesis)", 
         pagePath: "/projects/windmill",
         orientation: "landscapeWhite",
     },

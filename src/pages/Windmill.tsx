@@ -10,120 +10,325 @@ const Windmill = () => {
       <div className='mainScroller'>
         
         <div style={{width: '100%', height: 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center'}}>
-            <img src='windmill/Intro.png' style={{border: '0.2rem solid gray', borderRadius: '0.5rem', width: '100%', textAlign: 'center'}}></img>
+          <img src='windmill/Intro.png' style={{border: '0.2rem solid gray', borderRadius: '0.5rem', width: '100%', textAlign: 'center'}} alt='Hammerhead offshore wind turbine installation configuration and tower-top orbital motion'></img>
         </div>
         <br /><br />
 
-        <h1 className='title'>Physics-Informed Autoencoder and Latent Diffusion Modeling for Offshore Wind Turbine Motion</h1>
-        <p >Curriculum-Trained Representation Learning for a Digital Twin</p>
-        <p className='subtitle'>Manuscript under peer review.</p>
-
-        <p className='desc'>
-            <h2>Problem Statement</h2>
-            <br />
-            During offshore wind turbine blade installation, wave-induced tower-top motion can become difficult to predict in real time. These motions matter because excessive displacement can increase operational risk, delay installation, and reduce safety margins. The broader goal of this project is to support a digital twin capable of fast, physics-consistent motion prediction during installation.
-            <br /><br />
-
-            <h2>My Contribution</h2>
-            <br />
-            My contribution centered on the machine learning side of the project. I designed a physics-informed autoencoder that compresses offshore wind turbine tower-top motion into a compact latent representation while preserving the temporal and spectral behavior needed for accurate reconstruction. I also developed a multi-phase curriculum training strategy to stabilize learning across several competing loss terms. Building on that latent representation, I designed a latent diffusion framework intended for short-horizon prediction of future turbine motion under changing environmental conditions. The simulation data and reduced-order physics model provided the training foundation, but my primary work was the AI architecture and training methodology.
-            <br /><br />
-
-            <h2>Model Design</h2>
-            <br />
-            The first stage of the system is a physics-informed autoencoder that maps two-dimensional tower-top motion into a lower-dimensional latent vector while preserving the dominant temporal and spectral behavior of the original signal. In the final design, each sample is reduced from 840 floating-point values to a 256-dimensional latent representation, making downstream prediction much more tractable. The autoencoder was trained to produce reconstructions that were not only accurate, but also structured well enough to serve as the latent backbone for a diffusion-based forecasting model.
-            <br /><br />
-            <div style={{width: '100%', height: 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center'}}>
-                <img src='windmill/auto_encoder.png' style={{border: '0.2rem solid gray', borderRadius: '0.5rem', width: '100%', textAlign: 'center'}}></img>
-            </div>
-            <br /><br />
-
-            <h2>Loss Terms</h2>
-            <br />
-            The model was trained with a mix of reconstruction, spectral, adversarial, latent regularization, and physics-based loss terms. Time-domain and FFT losses preserved the overall motion signal, STFT loss improved local spectral fidelity, adversarial loss reduced oversmoothing, latent regularization shaped the embedding for diffusion modeling, and the physics loss encouraged consistency with the governing dynamics. These terms were introduced progressively through curriculum learning so that more difficult objectives only appeared once the reconstructions were stable enough to support them.
-            <br /><br />
-
-            <h2>Training Strategy</h2>
-            <br />
-            A major part of my work was the design of a three-phase curriculum learning strategy. Rather than training with every objective at once, the model was trained progressively so it could first learn coarse reconstruction, then improve spectral fidelity, and finally incorporate physics-guided refinement once the outputs were smooth enough for those constraints to be meaningful. This staged process was important for stable convergence and for producing a latent space suitable for later diffusion modeling.
-            <br /><br />
-            <div style={{width: '100%', height: 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center'}}>
-                <img src='windmill/Train_vs_valid_Plot.png' style={{border: '0.2rem solid gray', borderRadius: '0.5rem', width: '100%', textAlign: 'center'}}></img>
-            </div>
-            <br /><br />
-
-            <h2>Latent Diffusion Framework</h2>
-            <br />
-            The broader prediction system is built around a latent diffusion model that operates on the compressed motion representation produced by the autoencoder. Instead of predicting raw motion directly, the framework first encodes tower-top motion into latent space, evolves that latent representation forward under environmental conditioning, and then decodes it back into time-domain motion. This separation of tasks between the auto-encoder and diffusion model makes the prediction problem more efficient and more scalable than forecasting directly in the original signal space. The diffusion model selected for this framework is a DDIM, since its deterministic sampling is better suited for efficient inference in a real-time physical setting. As of now, the autoencoder has been completed and validated, while the latent diffusion stage is still under development.
-            <br /><br />
-            <div style={{width: '100%', height: 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center'}}>
-                <img src='windmill/ldm-overview.png' style={{border: '0.2rem solid gray', borderRadius: '0.5rem', width: '100%', textAlign: 'center'}}></img>
-            </div>
-            <br /><br />
-
-            <h2>Results</h2>
-            <br />
-            The completed autoencoder achieved 2.9 mm mean absolute displacement error on both the training and testing sets, indicating strong reconstruction quality and good generalization. The close agreement between train and test error suggested that the model learned a stable latent representation rather than overfitting to the dataset. These results showed that the learned representation was suitable for integration into the larger latent diffusion framework.
-            <br /><br />
-            <div style={{width: '100%', height: 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center'}}>
-                <img src='windmill/recon-typical.png' style={{border: '0.2rem solid gray', borderRadius: '0.5rem', width: '100%', textAlign: 'center'}}></img>
-                <img src='windmill/time-domain-rough.png' style={{border: '0.2rem solid gray', borderRadius: '0.5rem', width: '100%', textAlign: 'center'}}></img>
-                <img src='windmill/time-domain-smooth.png' style={{border: '0.2rem solid gray', borderRadius: '0.5rem', width: '100%', textAlign: 'center'}}></img>
-            </div>
-            <br /><br />
-        </p>
+        <h1 className='title'>Reduced-Order Prediction of Offshore Wind Turbine Motion Using Generative AI</h1>
+        <p>Physics-informed autoencoder and latent diffusion forecasting for offshore wind turbine installation</p>
+        <p className='subtitle'>Master’s Thesis Project — University of Maine, 2026</p>
 
         <div className='desc'>
-            <h2>Project Status</h2>
-            <br/>
-            <ul>
-                <li style={{marginLeft: '1rem'}}>Physics-informed autoencoder implemented and validated on high-fidelity simulation data</li>
-                <li style={{marginLeft: '1rem'}}>Results presented at Maine AI Conference (2025) and IMECE 2025</li>
-                <li style={{marginLeft: '1rem'}}>Ongoing work in training latent diffusion model trained for short-horizon probabilistic motion prediction</li>
-                <li style={{marginLeft: '1rem'}}>Manuscript under peer review</li>
-                <li style={{marginLeft: '1rem'}}>Working on ablation study to prove significance of loss terms</li>
-                <li style={{marginLeft: '1rem'}}>Testing longer range prediction windows and higher compression ratios</li>
-            </ul>
+          <h2>Problem Statement</h2>
+          <br />
+          <p>
+            During offshore wind turbine blade installation, waves can cause the top of the turbine tower to move in complicated two-dimensional patterns. This motion matters because blade mating requires precise alignment between the blade root and the hub. If the tower-top motion is too large or poorly timed, installation becomes riskier, slower, and harder to plan.
+          </p>
+
+          <p>
+            High-fidelity simulation tools can model this behavior, but they are too computationally expensive for real-time decision support. The goal of this project was to develop a faster reduced-order AI framework that could represent and forecast tower-top motion while still preserving the main physical structure of the response.
+          </p>
+          <br /><br />
+
+          <h2>Project Overview</h2>
+          <br />
+          <p>
+            This thesis developed a two-stage machine learning framework for offshore wind turbine motion prediction. The first stage uses a physics-informed autoencoder to compress two-dimensional tower-top motion into a compact latent representation. The second stage uses a conditional latent diffusion model to forecast future motion in that learned latent space.
+          </p>
+
+          <p>
+            Instead of predicting the full motion signal directly, the system learns a smaller representation of the motion, predicts the future latent state, and then decodes it back into physical displacement. This makes the forecasting problem faster and more practical for digital-twin-style applications.
+          </p>
+          <br></br>
+          <div style={{width: '100%', display: 'flex', justifyContent: 'center'}}>
+            <table style={{borderCollapse: 'collapse', textAlign: 'center', minWidth: '20rem'}}>
+              <thead>
+                <tr>
+                  <th style={{border: '0.15rem solid black', padding: '0.6rem'}}>Area</th>
+                  <th style={{border: '0.15rem solid black', padding: '0.6rem'}}>Summary</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style={{border: '0.15rem solid black', padding: '0.6rem'}}>Application</td>
+                  <td style={{border: '0.15rem solid black', padding: '0.6rem'}}>Offshore wind turbine blade installation</td>
+                </tr>
+                <tr>
+                  <td style={{border: '0.15rem solid black', padding: '0.6rem'}}>Main Task</td>
+                  <td style={{border: '0.15rem solid black', padding: '0.6rem'}}>Forecast future tower-top motion</td>
+                </tr>
+                <tr>
+                  <td style={{border: '0.15rem solid black', padding: '0.6rem'}}>Data Source</td>
+                  <td style={{border: '0.15rem solid black', padding: '0.6rem'}}>High-fidelity OrcaFlex simulation</td>
+                </tr>
+                <tr>
+                  <td style={{border: '0.15rem solid black', padding: '0.6rem'}}>Turbine Model</td>
+                  <td style={{border: '0.15rem solid black', padding: '0.6rem'}}>IEA 10-MW offshore wind turbine in hammerhead configuration</td>
+                </tr>
+                <tr>
+                  <td style={{border: '0.15rem solid black', padding: '0.6rem'}}>AI Models</td>
+                  <td style={{border: '0.15rem solid black', padding: '0.6rem'}}>Physics-informed autoencoder and latent diffusion model</td>
+                </tr>
+                <tr>
+                  <td style={{border: '0.15rem solid black', padding: '0.6rem'}}>Physics Guide</td>
+                  <td style={{border: '0.15rem solid black', padding: '0.6rem'}}>SINDy-based reduced-order equations</td>
+                </tr>
+                <tr>
+                  <td style={{border: '0.15rem solid black', padding: '0.6rem'}}>Forecast Horizon</td>
+                  <td style={{border: '0.15rem solid black', padding: '0.6rem'}}>One-minute future motion windows</td>
+                </tr> 
+              </tbody>
+            </table>
+          </div>
+          <br /><br />
+
+          <h2>My Contribution</h2>
+          <br />
+          <p>
+            My work focused on the AI modeling side of the project. I developed and refined the autoencoder used to compress tower-top motion, designed the training strategy and loss structure, and built the latent diffusion model used for future-window prediction.
+          </p>
+
+          <p>
+            The simulation data and reduced-order physics model provided the foundation, while my main contribution was developing the machine learning framework that connected representation learning, physics-guided training, and latent-space forecasting.
+          </p>
+          <br /><br />
+
+          <h2>Data and Physics Foundation</h2>
+          <br />
+          <p>
+            The model was trained and evaluated using tower-top motion data from OrcaFlex simulations. The simulation campaign covered a range of wave heights, peak periods, wave directions, and random wave realizations. The final dataset included thousands of ten-minute simulations, which were resampled and divided into shorter windows for machine learning.
+          </p>
+
+          <p>
+            A simplified reduced-order physics model was also identified using SINDy. These equations were not used to replace the AI model. Instead, they acted as a physics guide during training, encouraging the learned motion to stay closer to the dominant structural dynamics.
+          </p>
+          <br /><br />
+
+          <h2>AI Framework</h2>
+          <br />
+          <p>
+            The framework has two connected parts. First, the autoencoder compresses tower-top motion into a smaller latent vector. The input motion contains both fore-aft and side-side displacement, so the model has to preserve not only the time history, but also the coupled orbital behavior between the two directions.
+          </p>
+          <br></br>
+          <div style={{width: '100%', height: 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', backgroundColor: 'white'}}>
+            <img src='windmill/auto_enc.png' style={{border: '0.2rem solid gray', borderRadius: '0.5rem', width: '100%', textAlign: 'center', paddingTop: '1vh'}} alt='Physics-informed autoencoder architecture for tower-top motion compression'></img>
+          </div>
+          <br />
+
+          <p>
+            Second, the latent diffusion model predicts the next motion window in latent space. It uses previous motion and future wave-state information as conditioning inputs. After the future latent vector is generated, the decoder converts it back into time-domain tower-top motion.
+          </p>
+          <br></br>
+          <div style={{width: '100%', height: 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', backgroundColor: 'white'}}>
+            <img src='windmill/ldm_model.png' style={{border: '0.2rem solid gray', borderRadius: '0.5rem', width: '100%', textAlign: 'center', paddingTop: '1vh'}} alt='Latent diffusion forecasting framework for future tower-top motion prediction'></img>
+          </div>
+          <br /><br />
+          <p>
+            The inference pipeline shown below starts with prior tower-top motion and future wave-state information, encodes the available motion into latent space, generates the next latent motion window through the diffusion model, and then decodes that result back into physical tower-top displacement. This latent-space workflow is what makes the final forecasting model fast enough for reduced-order prediction. In the final evaluation, the model generated a one-minute future motion forecast in about 2.094 ms per sample on the test setup.          </p>
+          <br></br>
+          <div style={{width: '100%', height: 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', backgroundColor: 'white'}}>
+            <img src='windmill/ldm_infer.png' style={{border: '0.2rem solid gray', borderRadius: '0.5rem', width: '100%', textAlign: 'center', paddingTop: '1vh'}} alt='Latent diffusion forecasting framework for future tower-top motion prediction'></img>
+          </div>
+          <br /><br />
+
+          <h2>Training Strategy</h2>
+          <br />
+          <p>
+            The autoencoder was trained with a mix of reconstruction, frequency-domain, latent regularization, and physics-based loss terms. The main challenge was balancing signal accuracy with physical consistency. A staged training strategy helped the model first learn clean reconstructions before adding harder constraints.
+          </p>
+          <br></br>
+          <div style={{width: '100%', height: 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center'}}>
+            <img src='windmill/revise_ae_loss.png' style={{border: '0.2rem solid gray', borderRadius: '0.5rem', width: '100%', textAlign: 'center'}} alt='Training and validation loss curves for the offshore wind turbine motion model'></img>
+          </div>
+          <br /><br />
+          <p>
+            The latent diffusion model was then trained on the learned motion representation. The final prediction model used efficient diffusion sampling so that future motion windows could be generated quickly enough for reduced-order forecasting.
+          </p>
+          <br></br>
+          <div style={{width: '100%', height: 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center'}}>
+            <img src='windmill/ldm_loss.png' style={{border: '0.2rem solid gray', borderRadius: '0.5rem', width: '100%', textAlign: 'center'}} alt='Training and validation loss curves for the offshore wind turbine motion model'></img>
+          </div>
+          <br /><br />
+
+          <h2>Results</h2>
+          <br />
+          <p>
+            The final framework showed that offshore wind turbine installation motion can be compressed, reconstructed, and forecast in a reduced-order latent space. The autoencoder preserved the main displacement, orbital, and frequency behavior of the motion. The latent diffusion model then used that representation to generate future one-minute motion forecasts with low inference time.
+          </p>
+          <br></br>
+          <div style={{width: '100%', display: 'flex', justifyContent: 'center'}}>
+            <table style={{borderCollapse: 'collapse', textAlign: 'center', minWidth: '20rem'}}>
+              <thead>
+                <tr>
+                  <th style={{border: '0.15rem solid black', padding: '0.6rem'}}>Result</th>
+                  <th style={{border: '0.15rem solid black', padding: '0.6rem'}}>Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style={{border: '0.15rem solid black', padding: '0.6rem'}}>Autoencoder mean test MAE</td>
+                  <td style={{border: '0.15rem solid black', padding: '0.6rem'}}>7.050 mm</td>
+                </tr>
+                <tr>
+                  <td style={{border: '0.15rem solid black', padding: '0.6rem'}}>Autoencoder median test MAE</td>
+                  <td style={{border: '0.15rem solid black', padding: '0.6rem'}}>5.769 mm</td>
+                </tr>
+                <tr>
+                  <td style={{border: '0.15rem solid black', padding: '0.6rem'}}>Autoencoder p90 test MAE</td>
+                  <td style={{border: '0.15rem solid black', padding: '0.6rem'}}>13.529 mm</td>
+                </tr>
+                <tr>
+                  <td style={{border: '0.15rem solid black', padding: '0.6rem'}}>LDM mean test MAE</td>
+                  <td style={{border: '0.15rem solid black', padding: '0.6rem'}}>11.42 mm</td>
+                </tr>
+                <tr>
+                  <td style={{border: '0.15rem solid black', padding: '0.6rem'}}>LDM median test MAE</td>
+                  <td style={{border: '0.15rem solid black', padding: '0.6rem'}}>8.600 mm</td>
+                </tr>
+                <tr>
+                  <td style={{border: '0.15rem solid black', padding: '0.6rem'}}>LDM p90 test MAE</td>
+                  <td style={{border: '0.15rem solid black', padding: '0.6rem'}}>23.70 mm</td>
+                </tr>
+                <tr>
+                  <td style={{border: '0.15rem solid black', padding: '0.6rem'}}>Average generation time</td>
+                  <td style={{border: '0.15rem solid black', padding: '0.6rem'}}>2.094 ms</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <br /><br />
+
+          <div style={{width: '100%', height: 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center'}}>
+            <img src='windmill/ldm_typical_example.png' style={{border: '0.2rem solid gray', borderRadius: '0.5rem', width: '100%', textAlign: 'center'}} alt='Typical latent diffusion forecasting example for offshore wind turbine tower-top motion'></img>
+          </div>
+          <br />
+
+          <div style={{width: '100%', height: 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center'}}>
+            <img src='windmill/ldm_typical_orbit.png' style={{border: '0.2rem solid gray', borderRadius: '0.5rem', width: '100%', textAlign: 'center'}} alt='Typical latent diffusion forecasting orbit showing coupled fore-aft and side-side motion'></img>
+          </div>
+          <br />
+
+          <p>
+            The model performed best in typical response cases and was weaker in extreme low-amplitude cases, especially when one motion direction became very small. This matters because small absolute errors can become large normalized errors when the true signal is close to zero.
+          </p>
+          <br /><br />
+
+          <h2>Why It Matters</h2>
+          <br />
+          <p>
+            This work is not meant to replace high-fidelity simulation or engineering judgment. Instead, it shows a path toward a faster middle layer: a model that is much cheaper to evaluate than full simulation, but still tied to the physical behavior that matters during installation.
+          </p>
+
+          <p>
+            That type of model could eventually support digital twin tools for marine operations, where operators need fast forecasts, clear motion trends, and practical decision support under changing environmental conditions.
+          </p>
+          <br /><br />
+
+          <h2>Technologies Used</h2>
+          <br />
+
+          <div style={{width: '100%', display: 'flex', justifyContent: 'center'}}>
+            <table style={{borderCollapse: 'collapse', textAlign: 'center', minWidth: '20rem'}}>
+              <thead>
+                <tr>
+                  <th style={{border: '0.15rem solid black', padding: '0.6rem'}}>Category</th>
+                  <th style={{border: '0.15rem solid black', padding: '0.6rem'}}>Tools / Methods</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style={{border: '0.15rem solid black', padding: '0.6rem'}}>Machine Learning</td>
+                  <td style={{border: '0.15rem solid black', padding: '0.6rem'}}>PyTorch, autoencoders, latent diffusion, DDIM-style sampling</td>
+                </tr>
+                <tr>
+                  <td style={{border: '0.15rem solid black', padding: '0.6rem'}}>Scientific Computing</td>
+                  <td style={{border: '0.15rem solid black', padding: '0.6rem'}}>Python, NumPy, pandas, SciPy</td>
+                </tr>
+                <tr>
+                  <td style={{border: '0.15rem solid black', padding: '0.6rem'}}>Simulation</td>
+                  <td style={{border: '0.15rem solid black', padding: '0.6rem'}}>OrcaFlex</td>
+                </tr>
+                <tr>
+                  <td style={{border: '0.15rem solid black', padding: '0.6rem'}}>Physics Modeling</td>
+                  <td style={{border: '0.15rem solid black', padding: '0.6rem'}}>SINDy, reduced-order dynamics</td>
+                </tr>
+                <tr>
+                  <td style={{border: '0.15rem solid black', padding: '0.6rem'}}>Signal Processing</td>
+                  <td style={{border: '0.15rem solid black', padding: '0.6rem'}}>FFT, STFT, time-windowed motion analysis</td>
+                </tr>
+                <tr>
+                  <td style={{border: '0.15rem solid black', padding: '0.6rem'}}>Visualization</td>
+                  <td style={{border: '0.15rem solid black', padding: '0.6rem'}}>Matplotlib</td>
+                </tr>
+                <tr>
+                  <td style={{border: '0.15rem solid black', padding: '0.6rem'}}>Hardware</td>
+                  <td style={{border: '0.15rem solid black', padding: '0.6rem'}}>CUDA-enabled GPU training</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <br /><br />
+        </div>
+
+        <div className='desc'>
+          <h2>Project Status</h2>
+          <br />
+
+          <ul>
+            <li style={{marginLeft: '1rem'}}>Master’s thesis completed</li>
+            <li style={{marginLeft: '1rem'}}>Physics-informed autoencoder completed and evaluated</li>
+            <li style={{marginLeft: '1rem'}}>Latent diffusion forecasting model completed and evaluated</li>
+            <li style={{marginLeft: '1rem'}}>Ablation studies completed</li>
+            <li style={{marginLeft: '1rem'}}>Future work includes longer forecast windows, measured data, uncertainty estimation, and operator-facing visualization</li>
+          </ul>
         </div>
 
         <div className='ContentBanner'>
 
-            
-            <a href="https://github.com/DyllonDunton1/Offshore_Wind_AE" className="tileBase" download>
-                <div className="tileImgContainer">
-                    <img src="/Github_Mark.png" className="tileImg"></img>
-                </div>
-                <div className="tileInfo">
-                    <h2 className="tileTitle">Github Repository</h2>
-                </div>
-            </a>
-            
-            <a href="/Dunton-Dyllon-IMECE-Conference-Poster.pptx" className="tileBase" download>
-                <div className="tileImgContainer landscapeWhiteContainer">
-                    <img src="/Dunton-Dyllon-IMECE-Conference-Poster.png" className="tileImg landscapeWhite"></img>
-                </div>
-                <div className="tileInfo">
-                    <h2 className="tileTitle">Poster for IMECE 2025 Graduate Student Poster Competition (NSF)</h2>
-                </div>
-            </a>
+          <a href="https://github.com/DyllonDunton1/Offshore_Wind_AE" className="tileBase" download>
+            <div className="tileImgContainer">
+              <img src="/Github_Mark.png" className="tileImg" alt="GitHub logo"></img>
+            </div>
+            <div className="tileInfo">
+              <h2 className="tileTitle">GitHub Repository</h2>
+            </div>
+          </a>
 
-            <a href="/windmill_abstract.pdf" className="tileBase" download>
-                <div className="tileImgContainer portraitWhiteContainer">
-                    <img src="/windmill_abstract.png" className="tileImg portraitWhite"></img>
-                </div>
-                <div className="tileInfo">
-                    <h2 className="tileTitle">Abstract for 2nd Annual Maine AI Conference for poster submission</h2>
-                </div>
-            </a>
+          <a href="/windmill/Dunton_Dyllon_Thesis_Final_May_2026_Trimmed.pdf" className="tileBase" download>
+            <div className="tileImgContainer portraitWhiteContainer">
+              <img src="/windmill/trimmed_thesis.png" className="tileImg portraitWhite" alt="Final thesis preview"></img>
+            </div>
+            <div className="tileInfo">
+              <h2 className="tileTitle">Final Master’s Thesis (Preview / Awaiting Publish)</h2>
+            </div>
+          </a>
+          
+          <a href="/Dunton-Dyllon-IMECE-Conference-Poster.pptx" className="tileBase" download>
+            <div className="tileImgContainer landscapeWhiteContainer">
+              <img src="/Dunton-Dyllon-IMECE-Conference-Poster.png" className="tileImg landscapeWhite" alt="IMECE 2025 poster preview"></img>
+            </div>
+            <div className="tileInfo">
+              <h2 className="tileTitle">IMECE 2025 Poster</h2>
+            </div>
+          </a>
 
-            <a href="/windmill_poster.png" className="tileBase" download>
-                <div className="tileImgContainer landscapeClearContainer">
-                    <img src="/windmill_poster.png" className="tileImg landscapeClear"></img>
-                </div>
-                <div className="tileInfo">
-                    <h2 className="tileTitle">Poster for 2nd Annual Maine AI Conference for poster submission</h2>
-                </div>
-            </a>
+          <a href="/windmill_abstract.pdf" className="tileBase" download>
+            <div className="tileImgContainer portraitWhiteContainer">
+              <img src="/windmill_abstract.png" className="tileImg portraitWhite" alt="Maine AI Conference abstract preview"></img>
+            </div>
+            <div className="tileInfo">
+              <h2 className="tileTitle">Maine AI Conference Abstract</h2>
+            </div>
+          </a>
+
+          <a href="/windmill_poster.png" className="tileBase" download>
+            <div className="tileImgContainer landscapeClearContainer">
+              <img src="/windmill_poster.png" className="tileImg landscapeClear" alt="Maine AI Conference poster preview"></img>
+            </div>
+            <div className="tileInfo">
+              <h2 className="tileTitle">Maine AI Conference Poster</h2>
+            </div>
+          </a>
         </div>
       </div>
     </div>
