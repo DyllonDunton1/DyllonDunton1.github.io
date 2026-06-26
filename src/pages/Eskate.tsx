@@ -11,13 +11,13 @@ const Eskate = () => {
         
         <div className='ImageBanner'>
             <div className='BannerPic'>
-                <img src='/eskate_v1.gif' className='img'></img>
+                <img src='/eskate/eskate_v1.gif' className='img'></img>
             </div>
             <div className='BannerPic'>
                 <picture>
-                    <source className="img" media="(max-width: 1300px)" srcSet="/eskate_v2.jpg"/>
-                    <source className="img" media="(min-width: 1301px)" srcSet="/eskate_v2_side.jpg"/>
-                    <img className="img" src="large.jpg" alt="Responsive image"/>
+                    <source className="img" media="(max-width: 1300px)" srcSet="/eskate/eskate_v2.jpg"/>
+                    <source className="img" media="(min-width: 1301px)" srcSet="/eskate/eskate_v2_side.jpg"/>
+                    <img className="img" src="/eskate/eskate_v2.jpg" alt="Electric skateboard V2"/>
                 </picture>
             </div>
         </div>
