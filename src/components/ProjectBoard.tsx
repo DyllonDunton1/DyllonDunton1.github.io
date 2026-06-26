@@ -47,13 +47,6 @@ const projects = [
         orientation: "as_is",
     },
     {
-        staticUrl: "robocoms/robocoms.png",
-        gifUrl: "robocoms/robocoms.gif",
-        title: "Robot Communication for Umaine Black Bear Robotics Club", 
-        pagePath: "/projects/robocoms",
-        orientation: "as_is",
-    },
-    {
         staticUrl: "transcript/sample.jpg",
         gifUrl: "transcript/sample.jpg",
         title: "RAGAI Transcript Reader: AI-Driven Academic Transcript Parsing", 
