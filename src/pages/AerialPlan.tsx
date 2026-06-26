@@ -10,7 +10,7 @@ const AerialPlan = () => {
       <div className='mainScroller'>
         
         <div style={{width: '100%', height: 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center'}}>
-            <img src='/rover_nav_banner.png' style={{border: '0.2rem solid gray', borderRadius: '0.5rem', width: '100%', textAlign: 'center'}}></img>
+            <img src='/aerialplan/rover_nav_banner.png' style={{border: '0.2rem solid gray', borderRadius: '0.5rem', width: '100%', textAlign: 'center'}}></img>
         </div>
         <br /><br />
 
@@ -35,25 +35,25 @@ const AerialPlan = () => {
 
             <a href="https://github.com/DyllonDunton1/Height_Map_UNET" className="tileBase" download>
                 <div className="tileImgContainer">
-                    <img src="/Github_Mark.png" className="tileImg"></img>
+                    <img src="/common/Github_Mark.png" className="tileImg"></img>
                 </div>
                 <div className="tileInfo">
                     <h2 className="tileTitle">GitHub Repository</h2>
                 </div>
             </a>
 
-            <a href="/Dunton-Walden-COS573-Final-Report.pdf" className="tileBase" download>
+            <a href="/aerialplan/Dunton-Walden-COS573-Final-Report.pdf" className="tileBase" download>
                 <div className="tileImgContainer">
-                    <img src="/rover_paper.png" className="tileImg"></img>
+                    <img src="/aerialplan/rover_paper.png" className="tileImg"></img>
                 </div>
                 <div className="tileInfo">
                     <h2 className="tileTitle">Rover Navigation Final Paper</h2>
                 </div>
             </a>
 
-            <a href="/Dunton-Walden-COS5473-FinalPres.pptx" className="tileBase" download>
+            <a href="/aerialplan/Dunton-Walden-COS5473-FinalPres.pptx" className="tileBase" download>
                 <div className="tileImgContainer">
-                    <img src="/rover_presi.png" className="tileImg"></img>
+                    <img src="/aerialplan/rover_presi.png" className="tileImg"></img>
                 </div>
                 <div className="tileInfo">
                     <h2 className="tileTitle">Rover Navigation Final Presentation</h2>
