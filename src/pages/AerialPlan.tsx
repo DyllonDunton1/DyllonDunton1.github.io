@@ -47,7 +47,7 @@ const AerialPlan = () => {
                     <img src="/rover_paper.png" className="tileImg"></img>
                 </div>
                 <div className="tileInfo">
-                    <h2 className="tileTitle">Rover Naviagation Final Paper</h2>
+                    <h2 className="tileTitle">Rover Navigation Final Paper</h2>
                 </div>
             </a>
 
@@ -56,7 +56,7 @@ const AerialPlan = () => {
                     <img src="/rover_presi.png" className="tileImg"></img>
                 </div>
                 <div className="tileInfo">
-                    <h2 className="tileTitle">Rover Naviagation Final Presentation</h2>
+                    <h2 className="tileTitle">Rover Navigation Final Presentation</h2>
                 </div>
             </a>
         </div>
