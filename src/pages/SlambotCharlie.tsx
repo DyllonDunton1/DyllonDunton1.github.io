@@ -10,9 +10,10 @@ const mediaStyle = {
 
 const captionStyle = {
   fontSize: '0.85rem',
-  color: '#555',
+  color: 'black',
   marginTop: '0.35rem',
-  textAlign: 'center' as const,
+  textAlign: 'right' as const,
+  width: '100%',
 }
 
 const tableCellStyle = {
