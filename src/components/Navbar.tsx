@@ -18,7 +18,7 @@ const Navbar = () => {
     <nav>
       <div className='identify'>
         <div className='mugshot'>
-            <img src="/mugshot.png" className='mugshotImage' alt='Dyllon Dunton profile'></img>
+            <img src="/portfolio_profile.jpg" className='mugshotImage' alt='Dyllon Dunton profile'></img>
         </div>
       </div>
       <div className='identify-text'>
