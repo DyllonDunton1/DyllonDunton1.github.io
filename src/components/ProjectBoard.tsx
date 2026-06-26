@@ -6,7 +6,7 @@ import Tile from './Tile'
 const projects = [
     {
         staticUrl: "slambot_charlie/charlie_side_view.jpg",
-        gifUrl: "slambot_charlie/charlie_motion_showcase.gif",
+        gifUrl: "slambot_charlie/charlie_motion.gif",
         title: "Slambot Charlie: ROS 2 SLAM Robot with Web Dashboard", 
         pagePath: "/projects/slambot-charlie",
         orientation: "landscapeClear",
