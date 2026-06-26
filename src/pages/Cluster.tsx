@@ -11,7 +11,7 @@ const Cluster = () => {
         
         <div className='ImageBanner'>
             <div className='BannerPic'>
-                <img src='/cluster_photo.jpg' className='img'></img>
+                <img src='/cluster/cluster_photo.jpg' className='img'></img>
             </div>
         </div>
 
@@ -39,18 +39,18 @@ const Cluster = () => {
         </p>
 
         <div className='ContentBanner'>
-            <a href="/Dunton_MSGC_AY2023_Report.pdf" className="tileBase" download>
+            <a href="/cluster/Dunton_MSGC_AY2023_Report.pdf" className="tileBase" download>
                 <div className="tileImgContainer">
-                    <img src="/cugr_paper_img.png" className="tileImg"></img>
+                    <img src="/cluster/cugr_paper_img.png" className="tileImg"></img>
                 </div>
                 <div className="tileInfo">
                     <h2 className="tileTitle">Cluster Computer Final Report</h2>
                 </div>
             </a>
 
-            <a href="/Umaine_Symposium_Poster.png" className="tileBase" download>
+            <a href="/cluster/Umaine_Symposium_Poster.png" className="tileBase" download>
                 <div className="tileImgContainer">
-                    <img src="/Umaine_Symposium_Poster.png" className="tileImg"></img>
+                    <img src="/cluster/Umaine_Symposium_Poster.png" className="tileImg"></img>
                 </div>
                 <div className="tileInfo">
                     <h2 className="tileTitle">Cluster Computer Poster</h2>
