@@ -258,25 +258,25 @@ const Submarine = () => {
             
           <a href="https://github.com/jacobcwildes/Submarine_Capstone" className="tileBase" download>
             <div className="tileImgContainer">
-              <img src="/Github_Mark.png" className="tileImg" alt="GitHub logo"></img>
+              <img src="/common/Github_Mark.png" className="tileImg" alt="GitHub logo"></img>
             </div>
             <div className="tileInfo">
               <h2 className="tileTitle">GitHub Repository</h2>
             </div>
           </a>
 
-          <a href="/Capstone_Final.pdf" className="tileBase" download>
+          <a href="/submarine/Capstone_Final.pdf" className="tileBase" download>
             <div className="tileImgContainer portraitWhiteContainer">
-              <img src="/capstone_paper.png" className="tileImg portraitWhite" alt="Submarine capstone final paper preview"></img>
+              <img src="/submarine/capstone_paper.png" className="tileImg portraitWhite" alt="Submarine capstone final paper preview"></img>
             </div>
             <div className="tileInfo">
               <h2 className="tileTitle">Submarine Capstone Final Paper</h2>
             </div>
           </a>
 
-          <a href="/capstone_presi.pdf" className="tileBase" download>
+          <a href="/submarine/capstone_presi.pdf" className="tileBase" download>
             <div className="tileImgContainer landscapeClearContainer">
-              <img src="/capstone_presi.png" className="tileImg landscapeClear" alt="Submarine capstone final presentation preview"></img>
+              <img src="/submarine/capstone_presi.png" className="tileImg landscapeClear" alt="Submarine capstone final presentation preview"></img>
             </div>
             <div className="tileInfo">
               <h2 className="tileTitle">Submarine Capstone Final Presentation</h2>
