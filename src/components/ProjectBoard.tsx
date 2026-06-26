@@ -12,8 +12,8 @@ const projects = [
         orientation: "landscapeClear",
     },
     {
-        staticUrl: "submarine.png",
-        gifUrl: "submarine.png",
+        staticUrl: "submarine/submarine_tile.png",
+        gifUrl: "submarine/submarine_tile.png",
         title: "Submersible Drone for Hull Inspection", 
         pagePath: "/projects/submarine",
         orientation: "landscapeClear",
@@ -26,29 +26,29 @@ const projects = [
         orientation: "landscapeWhite",
     },
     {
-        staticUrl: "carracing.png",
+        staticUrl: "carracing/carracing.png",
         gifUrl: "carracing/gifs/comparison.gif",
         title: "Deep Reinforcement Learning Study with Car-Racing-V3", 
         pagePath: "/projects/carracing",
         orientation: "landscapeClear",
     },
     {
-        staticUrl: "aerialplan.png",
-        gifUrl: "aerialplan.png",
+        staticUrl: "aerialplan/aerialplan.png",
+        gifUrl: "aerialplan/aerialplan.png",
         title: "Rover Path Navigation via Aerial Imagery", 
         pagePath: "/projects/aerialplan",
         orientation: "portraitClear",
     },
     {
-        staticUrl: "robosoccer.png",
-        gifUrl: "robosoccer.gif",
+        staticUrl: "robosoccer/robosoccer.png",
+        gifUrl: "robosoccer/robosoccer.gif",
         title: "Jetbot Soccer via RRT* Path Planning and AruCo Tag Detection", 
         pagePath: "/projects/robosoccer",
         orientation: "as_is",
     },
     {
-        staticUrl: "robocoms.png",
-        gifUrl: "robocoms.gif",
+        staticUrl: "robocoms/robocoms.png",
+        gifUrl: "robocoms/robocoms.gif",
         title: "Robot Communication for Umaine Black Bear Robotics Club", 
         pagePath: "/projects/robocoms",
         orientation: "as_is",
@@ -61,15 +61,15 @@ const projects = [
         orientation: "as_is",
     },
     {
-        staticUrl: "eskate_v2.jpg",
-        gifUrl: "eskate_v1.gif",
+        staticUrl: "eskate/eskate_v2.jpg",
+        gifUrl: "eskate/eskate_v1.gif",
         title: "Electric Skateboard V1 and V2", 
         pagePath: "/projects/eskate",
         orientation: "as_is",
     }, 
     {
-        staticUrl: "cluster_photo.jpg",
-        gifUrl: "cluster_photo.jpg",
+        staticUrl: "cluster/cluster_photo.jpg",
+        gifUrl: "cluster/cluster_photo.jpg",
         title: "BeagleBone Black 8-Node Cluster Undergraduate Research", 
         pagePath: "/projects/cluster",
         orientation: "as_is",
@@ -89,9 +89,9 @@ const ProjectBoard = () => {
           orientation={proj.orientation}
         />
       ))}
-      <a href="/Dunton-Dyllon-Projects-June-2025.pdf"className="tileBase" download>
+      <a href="/additional_projects/Dunton-Dyllon-Projects-June-2025.pdf"className="tileBase" download>
         <div className="tileImgContainer">
-          <img src="/project-page-img.png" className="tileImg"></img>
+          <img src="/additional_projects/project-page-img.png" className="tileImg"></img>
         </div>
         <div className="tileInfo">
           <h2 className="tileTitle">Additional Project Page (Internship Projects I Can't Show Code For)</h2>
