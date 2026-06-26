@@ -142,13 +142,13 @@ const Submarine = () => {
           <br />
 
           <div style={{width: '100%', height: 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center'}}>
-            <img src='/submarine/submarine_pcb.png' style={{...mediaStyle, transform: 'rotate(-90deg)', maxWidth: '75%'}} alt='Custom submarine PCB'></img>
+            <img src='/submarine/submarine_pcb.png' style={{...mediaStyle, maxWidth: '75%'}} alt='Custom submarine PCB'></img>
           </div>
 
           <br />
 
           <div style={{width: '100%', height: 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center'}}>
-            <img src='/submarine/Submarine_Driver.png' style={{...mediaStyle, transform: 'rotate(-90deg)', maxWidth: '75%'}} alt='Submarine motor driver schematic'></img>
+            <img src='/submarine/Submarine_Driver.png' style={{...mediaStyle, maxWidth: '75%'}} alt='Submarine motor driver schematic'></img>
           </div>
 
           <br /><br />
