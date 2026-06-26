@@ -23,9 +23,9 @@ const Navbar = () => {
       </div>
       <div className='identify-text'>
         <h2 style={{ color: "black"}}>Dyllon Dunton</h2>
-        <p>Graudate Researcher</p>
-        <p>UMO M.S. Candidate</p>
-        <p style={{ marginBottom: '5%' }} >Applied ML & Robotics Engineer</p>
+        <p>Robotics & Applied ML Engineer</p>
+        <p>M.S. Computer Engineering</p>
+        <p style={{ marginBottom: '5%' }} >University of Maine</p>
         <p><i className="fa-solid fa-envelope linkIcon" style={{paddingRight: '1%'}}/><span className="linker" onClick={() => {navigator.clipboard.writeText("dyllon.dunton@maine.edu");alert("Email copied!");}} >dyllon.dunton@maine.edu</span></p>
         <p style={{ marginBottom: '5%' }}><i className="fa-solid fa-location-dot linkIcon" style={{paddingRight: '2%'}}/>Pittsfield, Maine (04967)</p>
         <p><i className="fa-brands fa-github linkIcon" style={{paddingRight: '1%'}}/>{" "}<a href="https://github.com/DyllonDunton1" className='linker'>DyllonDunton1</a></p>
