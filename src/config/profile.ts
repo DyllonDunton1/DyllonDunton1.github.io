@@ -1,6 +1,6 @@
-export const PROFILE_IMAGE_PATH = '/portfolio_profile.jpg'
+export const PROFILE_IMAGE_PATH = '/profile/portfolio_profile.jpg'
 export const PROFILE_IMAGE_ALT = 'Dyllon Dunton profile'
-export const RESUME_PATH = '/Dunton-Dyllon-Resume-June-2026.pdf'
+export const RESUME_PATH = '/resume/Dunton-Dyllon-Resume-June-2026.pdf'
 export const EMAIL = 'dyllon.dunton@maine.edu'
 export const LOCATION = 'Pittsfield, Maine (04967)'
 export const GITHUB_URL = 'https://github.com/DyllonDunton1'
