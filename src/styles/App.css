@@ -32,6 +32,11 @@
 
 
 
+table th {
+  font-weight: 700;
+  background-color: #f3f3f3;
+}
+
 .tile {
   padding: 4rem 2rem;
   
