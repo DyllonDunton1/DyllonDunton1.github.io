@@ -8,6 +8,13 @@ const mediaStyle = {
   textAlign: 'center' as const,
 }
 
+const captionStyle = {
+  fontSize: '0.85rem',
+  color: '#555',
+  marginTop: '0.35rem',
+  textAlign: 'center' as const,
+}
+
 const tableCellStyle = {
   border: '0.15rem solid black',
   padding: '0.6rem',
@@ -23,6 +30,7 @@ const SlambotCharlie = () => {
         
         <div style={{width: '100%', height: 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center'}}>
           <img src='/slambot_charlie/charlie_motion.gif' style={mediaStyle} alt='Slambot Charlie driving during a motion test'></img>
+          <p style={captionStyle}>Motion showcase GIF shown at 4x speed.</p>
         </div>
         <br /><br />
 
@@ -148,6 +156,7 @@ const SlambotCharlie = () => {
             <video controls muted playsInline style={mediaStyle}>
               <source src='/slambot_charlie/charlie_map_barrows_no_audio.mp4' type='video/mp4' />
             </video>
+            <p style={captionStyle}>Field mapping trial video shown at 64x speed.</p>
           </div>
           <br />
           <div style={{width: '100%', height: 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center'}}>
