@@ -15,7 +15,7 @@ function App() {
         <section id="about" className='tile tileAbout'>
           <h2>About Me</h2>
           <p>
-            I am a graduate researcher in Robotics and Applied Machine Learning focused on physics-guided models for physical and robotic systems. My work explores latent-state representations, reduced-order modeling, and simulation-driven prediction to enable efficient and stable learning from high-dimensional sensor and time-series data. In addition to academic research, I have industry experience developing embedded sensing, control, and data systems in production environments, which informs my emphasis on deployable ML pipelines, system validation, and real-world constraints.
+            I am a robotics and applied machine learning engineer focused on building intelligent systems that work on real hardware. My projects combine ROS 2, embedded control, sensing, SLAM/localization, simulation-driven prediction, and physics-guided machine learning. I like work that connects models to the physical world: robots that can drive, sense, map, learn, and be validated through real testing.
           </p>
           
         </section>
@@ -34,4 +34,3 @@ function App() {
 
 
 export default App
-
