@@ -38,7 +38,7 @@ const AerialPlan = () => {
                     <img src="/Github_Mark.png" className="tileImg"></img>
                 </div>
                 <div className="tileInfo">
-                    <h2 className="tileTitle">Github Repository</h2>
+                    <h2 className="tileTitle">GitHub Repository</h2>
                 </div>
             </a>
 
