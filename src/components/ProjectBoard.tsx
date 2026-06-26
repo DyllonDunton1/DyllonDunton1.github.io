@@ -12,25 +12,18 @@ const projects = [
         orientation: "landscapeClear",
     },
     {
-        staticUrl: "windmill/ldm_model.png",
-        gifUrl: "windmill/ldm_model.png",
-        title: "Reduced-Order Prediction of Offshore Wind Turbine Motion Using Generative AI (M.S. Thesis)", 
-        pagePath: "/projects/windmill",
-        orientation: "landscapeWhite",
-    },
-    {
-        staticUrl: "transcript/sample.jpg",
-        gifUrl: "transcript/sample.jpg",
-        title: "RAGAI Transcript Reader: AI-Driven Academic Transcript Parsing", 
-        pagePath: "/projects/transcript",
-        orientation: "as_is",
-    },
-    {
         staticUrl: "submarine.png",
         gifUrl: "submarine.png",
         title: "Submersible Drone for Hull Inspection", 
         pagePath: "/projects/submarine",
         orientation: "landscapeClear",
+    },
+    {
+        staticUrl: "windmill/ldm_model.png",
+        gifUrl: "windmill/ldm_model.png",
+        title: "Reduced-Order Prediction of Offshore Wind Turbine Motion Using Generative AI (M.S. Thesis)", 
+        pagePath: "/projects/windmill",
+        orientation: "landscapeWhite",
     },
     {
         staticUrl: "carracing.png",
@@ -47,10 +40,10 @@ const projects = [
         orientation: "portraitClear",
     },
     {
-        staticUrl: "cluster_photo.jpg",
-        gifUrl: "cluster_photo.jpg",
-        title: "BeagleBone Black 8-Node Cluster Undergraduate Research", 
-        pagePath: "/projects/cluster",
+        staticUrl: "robosoccer.png",
+        gifUrl: "robosoccer.gif",
+        title: "Jetbot Soccer via RRT* Path Planning and AruCo Tag Detection", 
+        pagePath: "/projects/robosoccer",
         orientation: "as_is",
     },
     {
@@ -61,10 +54,10 @@ const projects = [
         orientation: "as_is",
     },
     {
-        staticUrl: "robosoccer.png",
-        gifUrl: "robosoccer.gif",
-        title: "Jetbot Soccer via RRT* Path Planning and AruCo Tag Detection", 
-        pagePath: "/projects/robosoccer",
+        staticUrl: "transcript/sample.jpg",
+        gifUrl: "transcript/sample.jpg",
+        title: "RAGAI Transcript Reader: AI-Driven Academic Transcript Parsing", 
+        pagePath: "/projects/transcript",
         orientation: "as_is",
     },
     {
@@ -74,6 +67,13 @@ const projects = [
         pagePath: "/projects/eskate",
         orientation: "as_is",
     }, 
+    {
+        staticUrl: "cluster_photo.jpg",
+        gifUrl: "cluster_photo.jpg",
+        title: "BeagleBone Black 8-Node Cluster Undergraduate Research", 
+        pagePath: "/projects/cluster",
+        orientation: "as_is",
+    },
 ]
 
 const ProjectBoard = () => {
