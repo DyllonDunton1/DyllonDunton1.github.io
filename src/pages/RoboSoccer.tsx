@@ -36,14 +36,10 @@ const RoboSoccer = () => {
 
       <div className='mainScroller'>
         
-        <div className='ImageBanner'>
-          <div className='BannerPic'>
-            <img src='/robosoccer/robosoccer.gif' className='img' alt='JetBot robot soccer demo'></img>
-          </div>
-          <div className='BannerPic'>
-            <img src='/robosoccer/robosoccer.png' className='img' alt='Robot soccer field layout and path planning visualization'></img>
-          </div>
+        <div style={mediaContainerStyle}>
+          <img src='/robosoccer/robosoccer.gif' style={mediaStyle} alt='JetBot robot soccer demo'></img>
         </div>
+        <br /><br />
 
         <h1 className='title'>JetBot Soccer: ROS 2 Perception and RRT-Smooth Path Planning</h1>
         <p className='subtitle'>Autonomous tabletop robot pipeline using ArUco tag detection, robot-relative mapping, RRT path planning, path smoothing, and open-loop JetBot execution</p>
