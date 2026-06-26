@@ -5,6 +5,13 @@ import Tile from './Tile'
 
 const projects = [
     {
+        staticUrl: "slambot_charlie/charlie_side_view.jpg",
+        gifUrl: "slambot_charlie/charlie_motion_showcase.gif",
+        title: "Slambot Charlie: ROS 2 SLAM Robot with Web Dashboard", 
+        pagePath: "/projects/slambot-charlie",
+        orientation: "landscapeClear",
+    },
+    {
         staticUrl: "windmill/ldm_model.png",
         gifUrl: "windmill/ldm_model.png",
         title: "Reduced-Order Prediction of Offshore Wind Turbine Motion Using Generative AI (M.S. Thesis)", 
@@ -35,7 +42,7 @@ const projects = [
     {
         staticUrl: "aerialplan.png",
         gifUrl: "aerialplan.png",
-        title: "Rover Path Naviagation via Aerial Imagery", 
+        title: "Rover Path Navigation via Aerial Imagery", 
         pagePath: "/projects/aerialplan",
         orientation: "portraitClear",
     },
@@ -93,7 +100,6 @@ const ProjectBoard = () => {
     </div>
   )
 }
-
 
 
 export default ProjectBoard
