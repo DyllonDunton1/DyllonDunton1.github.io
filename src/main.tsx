@@ -13,9 +13,7 @@ import RoboComs from './pages/RoboComs.tsx'
 import RoboSoccer from './pages/RoboSoccer.tsx'
 import Cluster from './pages/Cluster.tsx';
 import Eskate from './pages/Eskate.tsx';
-
-
-
+import SlambotCharlie from './pages/SlambotCharlie.tsx';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -27,6 +25,7 @@ createRoot(document.getElementById('root')!).render(
         <Route path="/projects/transcript" element={<TranscriptReader/>} />
         <Route path="/projects/submarine" element={<Submarine/>} />
         <Route path="/projects/carracing" element={<CarRacing/>} />
+        <Route path="/projects/slambot-charlie" element={<SlambotCharlie/>} />
         <Route path="/projects/aerialplan" element={<AerialPlan/>} />
         <Route path="/projects/robocoms" element={<RoboComs/>} />
         <Route path="/projects/robosoccer" element={<RoboSoccer/>} />
