@@ -18,7 +18,7 @@ const Navbar = () => {
     <nav>
       <div className='identify'>
         <div className='mugshot'>
-            <img src="/mugshot.png" className='mugshotImage'></img>
+            <img src="/mugshot.png" className='mugshotImage' alt='Dyllon Dunton profile'></img>
         </div>
       </div>
       <div className='identify-text'>
@@ -30,7 +30,7 @@ const Navbar = () => {
         <p style={{ marginBottom: '5%' }}><i className="fa-solid fa-location-dot linkIcon" style={{paddingRight: '2%'}}/>Pittsfield, Maine (04967)</p>
         <p><i className="fa-brands fa-github linkIcon" style={{paddingRight: '1%'}}/>{" "}<a href="https://github.com/DyllonDunton1" className='linker'>DyllonDunton1</a></p>
         <p><i className="fa-brands fa-linkedin linkIcon" style={{paddingRight: '1%'}}/>{" "}<a href="https://www.linkedin.com/in/dyllon-dunton-47ab8b1b8/" className='linker'>dyllon-dunton</a></p>
-        <p><i className="fa-solid fa-file-arrow-down linkIcon" style={{paddingRight: '1%'}}/>{" "}<a href="/Dunton-Dyllon-Resume-Jan2026-Base.pdf" className='linker'  download>Resume</a></p>
+        <p><i className="fa-solid fa-file-arrow-down linkIcon" style={{paddingRight: '1%'}}/>{" "}<a href="/Dunton-Dyllon-Resume-June-2026.pdf" className='linker' download>Resume</a></p>
       </div>
 
   
