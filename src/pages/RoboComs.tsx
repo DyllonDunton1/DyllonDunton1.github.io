@@ -11,10 +11,10 @@ const RoboComs = () => {
         
         <div className='ImageBanner'>
             <div className='BannerPic'>
-                <img src='/robocoms.gif' className='img'></img>
+                <img src='/robocoms/robocoms.gif' className='img'></img>
             </div>
             <div className='BannerPic'>
-                <img src='/com_motors.gif' className='img'></img>
+                <img src='/robocoms/com_motors.gif' className='img'></img>
             </div>
         </div>
 
@@ -47,7 +47,7 @@ const RoboComs = () => {
         <div className='ContentBanner'>
             <a href="https://www.instagram.com/blackbearrobotics/" className="tileBase">
                 <div className="tileImgContainer">
-                    <img src="/bbr_bot_2025.jpeg" className="tileImg"></img>
+                    <img src="/robocoms/bbr_bot_2025.jpeg" className="tileImg"></img>
                 </div>
                 <div className="tileInfo">
                     <h2 className="tileTitle">Go see what the Umaine Black Bear Robotics Club is up to!</h2>
