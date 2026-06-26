@@ -287,7 +287,7 @@ const Windmill = () => {
 
           <a href="https://github.com/DyllonDunton1/Offshore_Wind_AE" className="tileBase" download>
             <div className="tileImgContainer">
-              <img src="/Github_Mark.png" className="tileImg" alt="GitHub logo"></img>
+              <img src="/common/Github_Mark.png" className="tileImg" alt="GitHub logo"></img>
             </div>
             <div className="tileInfo">
               <h2 className="tileTitle">GitHub Repository</h2>
@@ -303,27 +303,27 @@ const Windmill = () => {
             </div>
           </a>
           
-          <a href="/Dunton-Dyllon-IMECE-Conference-Poster.pptx" className="tileBase" download>
+          <a href="/windmill/Dunton-Dyllon-IMECE-Conference-Poster.pptx" className="tileBase" download>
             <div className="tileImgContainer landscapeWhiteContainer">
-              <img src="/Dunton-Dyllon-IMECE-Conference-Poster.png" className="tileImg landscapeWhite" alt="IMECE 2025 poster preview"></img>
+              <img src="/windmill/Dunton-Dyllon-IMECE-Conference-Poster.png" className="tileImg landscapeWhite" alt="IMECE 2025 poster preview"></img>
             </div>
             <div className="tileInfo">
               <h2 className="tileTitle">IMECE 2025 Poster</h2>
             </div>
           </a>
 
-          <a href="/windmill_abstract.pdf" className="tileBase" download>
+          <a href="/windmill/windmill_abstract.pdf" className="tileBase" download>
             <div className="tileImgContainer portraitWhiteContainer">
-              <img src="/windmill_abstract.png" className="tileImg portraitWhite" alt="Maine AI Conference abstract preview"></img>
+              <img src="/windmill/windmill_abstract.png" className="tileImg portraitWhite" alt="Maine AI Conference abstract preview"></img>
             </div>
             <div className="tileInfo">
               <h2 className="tileTitle">Maine AI Conference Abstract</h2>
             </div>
           </a>
 
-          <a href="/windmill_poster.png" className="tileBase" download>
+          <a href="/windmill/windmill_poster.png" className="tileBase" download>
             <div className="tileImgContainer landscapeClearContainer">
-              <img src="/windmill_poster.png" className="tileImg landscapeClear" alt="Maine AI Conference poster preview"></img>
+              <img src="/windmill/windmill_poster.png" className="tileImg landscapeClear" alt="Maine AI Conference poster preview"></img>
             </div>
             <div className="tileInfo">
               <h2 className="tileTitle">Maine AI Conference Poster</h2>
