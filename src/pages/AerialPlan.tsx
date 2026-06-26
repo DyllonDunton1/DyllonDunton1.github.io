@@ -8,14 +8,6 @@ const mediaStyle = {
   textAlign: 'center' as const,
 }
 
-const captionStyle = {
-  fontSize: '0.85rem',
-  color: 'black',
-  marginTop: '0.35rem',
-  textAlign: 'right' as const,
-  width: '100%',
-}
-
 const tableCellStyle = {
   border: '0.15rem solid black',
   padding: '0.6rem',
@@ -27,6 +19,15 @@ const tableHeaderStyle = {
   backgroundColor: '#f3f3f3',
 }
 
+const mediaContainerStyle = {
+  width: '100%',
+  height: 'auto',
+  display: 'flex',
+  flexDirection: 'column' as const,
+  justifyContent: 'flex-start',
+  alignItems: 'center',
+}
+
 const AerialPlan = () => {
   return (
     <div className='top'>
@@ -35,9 +36,8 @@ const AerialPlan = () => {
 
       <div className='mainScroller'>
         
-        <div style={{width: '100%', height: 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center'}}>
+        <div style={mediaContainerStyle}>
           <img src='/aerialplan/aerialplan_banner.png' style={mediaStyle} alt='Aerial imagery to rover path planning pipeline banner'></img>
-          <p style={captionStyle}>End-to-end aerial planning pipeline: drone imagery is converted into terrain maps, traversability estimates, and a rover path.</p>
         </div>
         <br /><br />
 
@@ -137,17 +137,20 @@ const AerialPlan = () => {
           <h2>Aerial Video Stitching</h2>
           <br />
           <p>
-            The first stage extracts frames from the drone video and stitches them into a single panorama using OpenCV. This creates a map-like view of the environment from a moving aerial camera. After stitching, the image is cropped to remove invalid regions around the panorama.
+            The first stage extracts frames from the drone video and stitches them into a single panorama using OpenCV. The GIF below shows the aerial footage used as the source input, and the stitched panorama beneath it shows the map-like image generated from selected frames.
           </p>
+          <br />
+          <div style={mediaContainerStyle}>
+            <img src='/aerialplan/aerialplan_drone_footage.gif' style={mediaStyle} alt='Aerial drone footage used as input for panorama stitching'></img>
+          </div>
+          <br />
+          <div style={mediaContainerStyle}>
+            <img src='/aerialplan/aerialplan_stitched_panorama.png' style={mediaStyle} alt='Stitched panorama generated from aerial drone footage'></img>
+          </div>
           <br />
           <p>
             This stage is important because the rest of the pipeline assumes a coherent terrain image. A clean panorama gives the height-estimation and segmentation stages a shared spatial reference.
           </p>
-          <br />
-          <div style={{width: '100%', height: 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center'}}>
-            <img src='/aerialplan/aerialplan_stitched_panorama.png' style={mediaStyle} alt='Stitched panorama generated from aerial drone footage'></img>
-            <p style={captionStyle}>OpenCV panorama stitching converts selected drone-video frames into a single top-down terrain view.</p>
-          </div>
           <br /><br />
 
           <h2>Height Map Generation</h2>
@@ -156,14 +159,13 @@ const AerialPlan = () => {
             After the panorama is created, the system runs ZoeDepth to estimate relative depth from the aerial image. The output is normalized into an intensity-style height map that provides a second terrain layer beyond RGB color.
           </p>
           <br />
+          <div style={mediaContainerStyle}>
+            <img src='/aerialplan/aerialplan_height_map.png' style={mediaStyle} alt='Relative height map generated from the stitched aerial panorama'></img>
+          </div>
+          <br />
           <p>
             This is not a survey-grade elevation model, but it gives the planner useful structure. For rover navigation, approximate height information can help identify slopes, ditches, mounds, and terrain transitions that may affect whether a route is safe or efficient.
           </p>
-          <br />
-          <div style={{width: '100%', height: 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center'}}>
-            <img src='/aerialplan/aerialplan_height_map.png' style={mediaStyle} alt='Relative height map generated from the stitched aerial panorama'></img>
-            <p style={captionStyle}>Monocular depth estimation provides a relative height-map layer for identifying terrain structure.</p>
-          </div>
           <br /><br />
 
           <h2>Semantic Segmentation</h2>
@@ -172,30 +174,28 @@ const AerialPlan = () => {
             The semantic segmentation stage classifies terrain at the pixel level using a ResNet-34 encoder and decoder-style segmentation model. The model was trained on semantic drone imagery with classes such as paved area, dirt, grass, gravel, vegetation, structures, fences, vehicles, and obstacles.
           </p>
           <br />
+          <div style={mediaContainerStyle}>
+            <img src='/aerialplan/aerialplan_semantic_segmentation.png' style={{...mediaStyle, maxWidth: '80%'}} alt='Semantic segmentation output for aerial terrain imagery'></img>
+          </div>
+          <br />
           <p>
             This transforms the aerial panorama from a visual image into a machine-interpretable terrain map. Instead of only showing what the environment looks like, the segmentation output gives the system information about what different regions likely are.
           </p>
-          <br />
-          <div style={{width: '100%', height: 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center'}}>
-            <img src='/aerialplan/aerialplan_semantic_segmentation.png' style={{...mediaStyle, maxWidth: '80%'}} alt='Semantic segmentation output for aerial terrain imagery'></img>
-            <p style={captionStyle}>Semantic segmentation classifies aerial terrain into surface and object categories.</p>
-          </div>
           <br /><br />
 
           <h2>Traversability Mapping</h2>
           <br />
           <p>
-            The raw semantic output is then reduced into a simpler traversability map. This step is important because a rover planner does not need to reason about every semantic class individually. It needs to know which terrain should be preferred, which terrain may be acceptable, and which terrain should be avoided.
+            The raw semantic output is reduced into a simpler traversability map. This step is important because a rover planner does not need to reason about every semantic class individually. It needs to know which terrain should be preferred, which terrain may be acceptable, and which terrain should be avoided.
           </p>
+          <br />
+          <div style={mediaContainerStyle}>
+            <img src='/aerialplan/aerialplan_traversability_map.png' style={mediaStyle} alt='Traversability map generated from semantic segmentation classes'></img>
+          </div>
           <br />
           <p>
             This turns computer vision output into robotics planning input. The semantic segmentation model identifies terrain and object classes, while the traversability map converts those classes into a form that a path planner can use.
           </p>
-          <br />
-          <div style={{width: '100%', height: 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center'}}>
-            <img src='/aerialplan/aerialplan_traversability_map.png' style={mediaStyle} alt='Traversability map generated from semantic segmentation classes'></img>
-            <p style={captionStyle}>Raw semantic classes are reduced into planning-oriented terrain categories: preferred, drivable, and avoided regions.</p>
-          </div>
           <br /><br />
 
           <h2>Path Planning</h2>
@@ -204,14 +204,13 @@ const AerialPlan = () => {
             The final stage uses A* search to plan a rover route across the generated map. The path planner uses the processed terrain representation to avoid poor regions and route through more favorable terrain.
           </p>
           <br />
+          <div style={mediaContainerStyle}>
+            <img src='/aerialplan/aerialplan_path_overlay.png' style={mediaStyle} alt='A* rover path overlay on aerial terrain map'></img>
+          </div>
+          <br />
           <p>
             The final output is a planned path overlaid on the aerial map. This demonstrates the main idea of the project: aerial perception can become a useful planning layer for a ground robot before the robot physically drives into the environment.
           </p>
-          <br />
-          <div style={{width: '100%', height: 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center'}}>
-            <img src='/aerialplan/aerialplan_path_overlay.png' style={mediaStyle} alt='A* rover path overlay on aerial terrain map'></img>
-            <p style={captionStyle}>A* path planning uses the generated terrain representation to route the rover through the mapped environment.</p>
-          </div>
           <br /><br />
 
           <h2>Results</h2>
