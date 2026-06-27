@@ -28,6 +28,23 @@ const mediaContainerStyle = {
   alignItems: 'center',
 }
 
+const imagePairStyle = {
+  width: '100%',
+  display: 'flex',
+  flexDirection: 'row' as const,
+  gap: '1rem',
+  justifyContent: 'center',
+  alignItems: 'stretch',
+  flexWrap: 'wrap' as const,
+}
+
+const pairedImageStyle = {
+  ...mediaStyle,
+  flex: '1 1 20rem',
+  maxWidth: '48%',
+  objectFit: 'cover' as const,
+}
+
 const Eskate = () => {
   return (
     <div className='top'>
@@ -37,7 +54,7 @@ const Eskate = () => {
       <div className='mainScroller'>
         
         <div style={mediaContainerStyle}>
-          <img src='/eskate/eskate_v2_media_placeholder.svg' style={mediaStyle} alt='Electric skateboard V2 media placeholder'></img>
+          <img src='/eskate/eskat_full_view.jpeg' style={mediaStyle} alt='Electric skateboard V2 full board view'></img>
         </div>
         <br /><br />
 
@@ -56,7 +73,7 @@ const Eskate = () => {
           </p>
           <br />
           <p>
-            I still have the V2 board and plan to replace the placeholder hero with new ride footage, drivetrain close-ups, enclosure photos, and charging hardware images when weather allows.
+            The current photos show the full V2 board, handheld controller, drivetrain/enclosure area, open electronics enclosure, and combined power switch / charge port. A motion GIF can be added later once outdoor riding footage is recorded.
           </p>
           <br /><br />
 
@@ -115,6 +132,10 @@ const Eskate = () => {
           <p>
             V2 was a full redesign rather than a small revision. The goal was to solve the problems from V1 by improving speed, range, power delivery, charging convenience, weather resistance, and maintainability. The result is a cleaner and more capable board that better reflects the kind of practical engineering tradeoffs needed for real hardware.
           </p>
+          <br />
+          <div style={mediaContainerStyle}>
+            <img src='/eskate/eskate_controller.jpeg' style={{...mediaStyle, maxWidth: '75%'}} alt='Electric skateboard V2 handheld controller'></img>
+          </div>
           <br /><br />
 
           <h2>Power and Drive System</h2>
@@ -126,6 +147,10 @@ const Eskate = () => {
           <p>
             The battery pack is a 12s3p configuration, and the board charges through a mounted port instead of requiring battery removal. Power is routed to the ESC through embedded copper braids hidden under the grip tape, which keeps high-current wiring cleaner, reduces exposed cabling, and allows the deck to flex without a rigid external wire run.
           </p>
+          <br />
+          <div style={mediaContainerStyle}>
+            <img src='/eskate/eskate_enclosure_drivetrain.jpeg' style={mediaStyle} alt='Electric skateboard V2 enclosure and drivetrain area'></img>
+          </div>
           <br /><br />
 
           <h2>Electronics and Control</h2>
@@ -133,6 +158,14 @@ const Eskate = () => {
           <p>
             A 2.4 GHz receiver pairs with the handheld remote and outputs a PWM signal to the dual ESC. The ESC then drives both motors with three-phase power. An anti-spark switch controls board activation, which is important for a high-power system where connecting or switching the battery can otherwise create harsh inrush behavior.
           </p>
+          <br />
+          <p>
+            The board-mounted charge port and power switch make the system easier to use than V1, where the battery had to be removed for charging. That usability change was one of the major goals of the V2 rebuild.
+          </p>
+          <br />
+          <div style={mediaContainerStyle}>
+            <img src='/eskate/eskate_power_switch_and_charge_port.jpeg' style={{...mediaStyle, maxWidth: '85%'}} alt='Electric skateboard V2 power switch and charge port'></img>
+          </div>
           <br />
           <p>
             The main engineering challenge was packaging the electronics in a way that was compact, serviceable, and protected from normal road exposure while still leaving access for maintenance and future repairs.
@@ -149,19 +182,16 @@ const Eskate = () => {
             Cable exits are reinforced with brass bushings and protected with heat shrink to reduce wear and help prevent water ingress. These details are small, but they matter for hardware that is expected to survive vibration, road debris, flexing, moisture, and repeated handling.
           </p>
           <br />
-          <div style={mediaContainerStyle}>
-            <picture>
-              <source media='(max-width: 1300px)' srcSet='/eskate/eskate_v2.jpg'/>
-              <source media='(min-width: 1301px)' srcSet='/eskate/eskate_v2_side.jpg'/>
-              <img src='/eskate/eskate_v2.jpg' style={{...mediaStyle, maxWidth: '85%'}} alt='Electric skateboard V2 existing build photo'></img>
-            </picture>
+          <div style={imagePairStyle}>
+            <img src='/eskate/eskate_open_enclosure.jpeg' style={pairedImageStyle} alt='Electric skateboard V2 open electronics enclosure'></img>
+            <img src='/eskate/eskate_v2_side.jpg' style={pairedImageStyle} alt='Electric skateboard V2 side profile'></img>
           </div>
           <br /><br />
 
           <h2>Real-World Use and Limitations</h2>
           <br />
           <p>
-            V2 has been used as a real warm-weather commuting board. It is faster, smoother, easier to charge, and more practical than V1. The design is still a personal build rather than a commercial product, so future improvements would focus on cleaner documentation, more formal electrical protection notes, and updated photos/videos showing the final hardware in use.
+            V2 has been used as a real warm-weather commuting board. It is faster, smoother, easier to charge, and more practical than V1. The design is still a personal build rather than a commercial product, so future improvements would focus on cleaner documentation, more formal electrical protection notes, and updated ride footage showing the final hardware in use.
           </p>
           <br />
           <p>
