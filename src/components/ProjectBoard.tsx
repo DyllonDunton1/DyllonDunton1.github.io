@@ -54,11 +54,11 @@ const projects = [
         orientation: "as_is",
     },
     {
-        staticUrl: "eskate/eskate_v2_media_placeholder.svg",
-        gifUrl: "eskate/eskate_v2_media_placeholder.svg",
+        staticUrl: "eskate/eskat_full_view.jpeg",
+        gifUrl: "eskate/eskat_full_view.jpeg",
         title: "Electric Skateboard V2: High-Power Electromechanical Build", 
         pagePath: "/projects/eskate",
-        orientation: "landscapeWhite",
+        orientation: "landscapeClear",
     }, 
     {
         staticUrl: "cluster/cluster_photo.jpg",
