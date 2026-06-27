@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="360" viewBox="0 0 1800 360" role="img" aria-labelledby="title desc">
+  <title id="title">RoboSoccer Autonomy Flow</title>
+  <desc id="desc">A simple left-to-right flowchart showing camera input, ArUco detection, world model, target pose, RRT path, smoothing, preview, motion commands, and JetBot drive.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="strokeWidth">
+      <path d="M 0 0 L 8 4 L 0 8 z" fill="#000000" />
+    </marker>
+    <style>
+      .box { fill: #ffffff; stroke: #000000; stroke-width: 2; rx: 10; ry: 10; }
+      .label { fill: #000000; font-family: Arial, Helvetica, sans-serif; font-size: 22px; font-weight: 600; text-anchor: middle; dominant-baseline: middle; }
+      .sub { fill: #000000; font-family: Arial, Helvetica, sans-serif; font-size: 16px; font-weight: 400; text-anchor: middle; dominant-baseline: middle; }
+      .arrow { stroke: #000000; stroke-width: 2; fill: none; marker-end: url(#arrow); }
+      .section { fill: #000000; font-family: Arial, Helvetica, sans-serif; font-size: 20px; font-weight: 700; text-anchor: middle; }
+      .sectionLine { stroke: #000000; stroke-width: 1.5; fill: none; }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="1800" height="360" fill="#ffffff" />
+
+  <!-- Section labels -->
+  <text class="section" x="330" y="48">Perception</text>
+  <line class="sectionLine" x1="150" y1="62" x2="510" y2="62" />
+
+  <text class="section" x="900" y="48">Planning</text>
+  <line class="sectionLine" x1="620" y1="62" x2="1180" y2="62" />
+
+  <text class="section" x="1470" y="48">Execution</text>
+  <line class="sectionLine" x1="1300" y1="62" x2="1640" y2="62" />
+
+  <!-- Boxes -->
+  <rect class="box" x="70" y="120" width="170" height="105" />
+  <text class="label" x="155" y="158">Camera</text>
+  <text class="sub" x="155" y="190">Logitech C270</text>
+
+  <rect class="box" x="300" y="120" width="180" height="105" />
+  <text class="label" x="390" y="158">ArUco</text>
+  <text class="sub" x="390" y="190">Tag detection</text>
+
+  <rect class="box" x="540" y="120" width="190" height="105" />
+  <text class="label" x="635" y="158">World Model</text>
+  <text class="sub" x="635" y="190">Robot-relative</text>
+
+  <rect class="box" x="790" y="120" width="175" height="105" />
+  <text class="label" x="877.5" y="158">Target Pose</text>
+  <text class="sub" x="877.5" y="190">Ball + goal</text>
+
+  <rect class="box" x="1025" y="120" width="165" height="105" />
+  <text class="label" x="1107.5" y="158">RRT Path</text>
+  <text class="sub" x="1107.5" y="190">Free-space route</text>
+
+  <rect class="box" x="1250" y="120" width="170" height="105" />
+  <text class="label" x="1335" y="158">Smoothing</text>
+  <text class="sub" x="1335" y="190">Fewer turns</text>
+
+  <rect class="box" x="1480" y="120" width="165" height="105" />
+  <text class="label" x="1562.5" y="158">Preview</text>
+  <text class="sub" x="1562.5" y="190">Matplotlib</text>
+
+  <rect class="box" x="1480" y="265" width="165" height="75" />
+  <text class="label" x="1562.5" y="303">Commands</text>
+
+  <rect class="box" x="1250" y="265" width="170" height="75" />
+  <text class="label" x="1335" y="303">JetBot Drive</text>
+
+  <!-- Arrows -->
+  <path class="arrow" d="M 240 172.5 L 292 172.5" />
+  <path class="arrow" d="M 480 172.5 L 532 172.5" />
+  <path class="arrow" d="M 730 172.5 L 782 172.5" />
+  <path class="arrow" d="M 965 172.5 L 1017 172.5" />
+  <path class="arrow" d="M 1190 172.5 L 1242 172.5" />
+  <path class="arrow" d="M 1420 172.5 L 1472 172.5" />
+  <path class="arrow" d="M 1562.5 225 L 1562.5 257" />
+  <path class="arrow" d="M 1480 302.5 L 1428 302.5" />
+</svg>
