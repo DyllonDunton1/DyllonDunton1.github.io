@@ -1,9 +1,9 @@
-import { useState } from 'react';
-import { Link} from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import '../styles/Tile.css'
+import { preloadImages } from '../utils/preloadImages'
 
-
-interface TileProps{
+interface TileProps {
   staticUrl: string,
   gifUrl: string,
   title: string,
@@ -13,26 +13,28 @@ interface TileProps{
 }
 
 const Tile = ({staticUrl, gifUrl, title, pagePath, orientation, featured = false}: TileProps) => {
+  const [imgSrc, setImgSrc] = useState(staticUrl)
 
-  const [imgSrc, setImgSrc] = useState(staticUrl);
-  //const [isHovered, setIsHovered] = useState(false)
+  useEffect(() => {
+    if (gifUrl !== staticUrl) {
+      preloadImages([gifUrl])
+    }
+  }, [gifUrl, staticUrl])
 
   const handleMouseEnter = () => {
-    //setIsHovered(true);
-    setImgSrc(''); // Force reflow
+    setImgSrc('')
     setTimeout(() => {
-      setImgSrc(gifUrl); // Reload the gif
-    }, 0.05);
-  };
+      setImgSrc(gifUrl)
+    }, 0.05)
+  }
 
   const handleMouseLeave = () => {
-    //setIsHovered(false);
-    setImgSrc(staticUrl);
-  };
+    setImgSrc(staticUrl)
+  }
 
-  let class_name_full_img = "tileImg " + orientation;
-  let class_name_full_container = "tileImgContainer " + orientation + "Container";
-  let class_name_tile = featured ? "tileBase featuredTile" : "tileBase";
+  const class_name_full_img = "tileImg " + orientation
+  const class_name_full_container = "tileImgContainer " + orientation + "Container"
+  const class_name_tile = featured ? "tileBase featuredTile" : "tileBase"
 
   return (
     <Link to={pagePath} 
@@ -49,6 +51,5 @@ const Tile = ({staticUrl, gifUrl, title, pagePath, orientation, featured = false
     </Link>
   )
 }
-
 
 export default Tile
