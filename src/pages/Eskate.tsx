@@ -90,7 +90,7 @@ const Eskate = () => {
           </p>
           <br />
           <p>
-            V2 reaches about 20 mph at the top end and has about a 12-mile range at moderate riding speeds. The current photos show the full V2 board, V1-to-V2 design comparison, handheld controller, open electronics enclosure, and combined power switch / charge port. A motion GIF can be added here later once outdoor riding footage is recorded.
+            V2 reaches about 20 mph at the top end and has about a 12-mile range at moderate riding speeds. I rode it about 4 miles to school and back daily when weather permitted, so the design had to be practical enough for repeated real-world use instead of just short demos. A motion GIF can be added here later once outdoor riding footage is recorded.
           </p>
           <br />
           <div style={mediaContainerStyle}>
@@ -128,6 +128,10 @@ const Eskate = () => {
                   <td style={tableCellStyle}>About 20 mph top speed and about 12 miles of moderate-speed range</td>
                 </tr>
                 <tr>
+                  <td style={tableCellStyle}>Use Case</td>
+                  <td style={tableCellStyle}>Ridden about 4 miles to school and back daily when weather permitted</td>
+                </tr>
+                <tr>
                   <td style={tableCellStyle}>Control</td>
                   <td style={tableCellStyle}>2.4 GHz remote receiver sending PWM to a dual ESC</td>
                 </tr>
@@ -157,6 +161,11 @@ const Eskate = () => {
           <p>
             V2 was a full redesign rather than a small revision. The goal was to solve the problems from V1 by improving speed, range, power delivery, charging convenience, weather resistance, and maintainability. The result is a cleaner and more capable board that better reflects the kind of practical engineering tradeoffs needed for real hardware.
           </p>
+          <br />
+          <div style={imagePairStyle}>
+            <img src='/eskate/eskate_full_view_upright_v1.jpeg' style={pairedImageStyle} alt='Electric skateboard V1 upright view'></img>
+            <img src='/eskate/eskate_full_view_upright_v2.jpeg' style={pairedImageStyle} alt='Electric skateboard V2 upright view'></img>
+          </div>
           <br /><br />
 
           <h2>Power and Drive System</h2>
@@ -166,17 +175,12 @@ const Eskate = () => {
           </p>
           <br />
           <p>
-            The V1-to-V2 comparison shows the practical packaging change: V1 used separate external boxes and required battery removal, while V2 consolidates the electronics into a cleaner board-mounted system with integrated charging and more careful power routing.
-          </p>
-          <br />
-          <div style={imagePairStyle}>
-            <img src='/eskate/eskate_full_view_upright_v1.jpeg' style={pairedImageStyle} alt='Electric skateboard V1 upright view'></img>
-            <img src='/eskate/eskate_full_view_upright_v2.jpeg' style={pairedImageStyle} alt='Electric skateboard V2 upright view'></img>
-          </div>
-          <br />
-          <p>
             The battery pack is a 12s3p configuration, and the board charges through a mounted port instead of requiring battery removal. Power is routed to the ESC through embedded copper braids hidden under the grip tape, which keeps high-current wiring cleaner, reduces exposed cabling, and allows the deck to flex without a rigid external wire run.
           </p>
+          <br />
+          <div style={mediaContainerStyle}>
+            <img src='/eskate/eskate_enclosure_drivetrain.jpeg' style={mediaStyle} alt='Electric skateboard V2 enclosure and drivetrain area'></img>
+          </div>
           <br /><br />
 
           <h2>Electronics and Control</h2>
@@ -214,7 +218,11 @@ const Eskate = () => {
           <h2>Real-World Use and Limitations</h2>
           <br />
           <p>
-            V2 has been used as a real warm-weather commuting board. It reaches about 20 mph at the top end, has about a 12-mile range at moderate speed, and is faster, smoother, easier to charge, and more practical than V1. The design is still a personal build rather than a commercial product, so future improvements would focus on cleaner documentation, more formal electrical protection notes, and updated ride footage showing the final hardware in use.
+            V2 has been used as a real warm-weather commuting board. It reaches about 20 mph at the top end, has about a 12-mile range at moderate speed, and was ridden about 4 miles to school and back daily when weather permitted. It is faster, smoother, easier to charge, and more practical than V1.
+          </p>
+          <br />
+          <p>
+            The design is still a personal build rather than a commercial product, so future improvements would focus on cleaner documentation, more formal electrical protection notes, and updated ride footage showing the final hardware in use.
           </p>
           <br />
           <p>
