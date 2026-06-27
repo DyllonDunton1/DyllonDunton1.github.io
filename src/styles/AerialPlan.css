@@ -51,11 +51,14 @@
 }
 
 .heroGithubLink {
-    display: inline-block;
+    display: block;
+    width: fit-content;
     font-size: 0.85rem;
     line-height: 1.2;
     margin-top: 0.45rem;
     margin-bottom: 0.25rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .desc {
