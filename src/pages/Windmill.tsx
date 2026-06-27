@@ -333,14 +333,19 @@ const Windmill = () => {
             </div>
           </a>
 
-          <a href="/windmill/Dunton_Dyllon_Thesis_Final_May_2026_Trimmed.pdf" className="tileBase" download>
-            <div className="tileImgContainer portraitWhiteContainer">
-              <img src="/windmill/trimmed_thesis.png" className="tileImg portraitWhite" alt="Final thesis preview"></img>
+          <div
+            className="tileBase"
+            aria-disabled="true"
+            title="Fully accepted by the University of Maine; awaiting Digital Commons publication"
+            style={{backgroundColor: 'rgb(135, 135, 135)', cursor: 'not-allowed', opacity: 0.75}}
+          >
+            <div className="tileImgContainer portraitWhiteContainer" style={{borderColor: 'rgb(135, 135, 135)', filter: 'grayscale(1)'}}>
+              <img src="/windmill/trimmed_thesis.png" className="tileImg portraitWhite" alt="Final thesis preview unavailable until Digital Commons publication"></img>
             </div>
             <div className="tileInfo">
               <h2 className="tileTitle">Final Master’s Thesis (Accepted / Awaiting Digital Commons)</h2>
             </div>
-          </a>
+          </div>
           
           <a href="/windmill/Dunton-Dyllon-IMECE-Conference-Poster.pptx" className="tileBase" download>
             <div className="tileImgContainer landscapeWhiteContainer">
