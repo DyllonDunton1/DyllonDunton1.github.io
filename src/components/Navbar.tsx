@@ -1,4 +1,5 @@
 import '../styles/Navbar.css'
+import { useMainScrollerWheel } from '../hooks/useMainScrollerWheel'
 import {
   CURRENT_FOCUS,
   EMAIL,
@@ -26,6 +27,8 @@ const Navbar = () => {
     }
 }
 */
+
+  useMainScrollerWheel()
 
   return (
     <nav>
