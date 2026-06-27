@@ -10,8 +10,10 @@ export const LINKEDIN_LABEL = 'dyllon-dunton'
 export const CURRENT_FOCUS = [
   'ROS 2',
   'C++',
+  'Python',
   'SLAM',
   'Sensor Fusion',
+  'Applied ML',
   'Embedded Control',
   'Real Robot Testing',
 ]
