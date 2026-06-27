@@ -29,22 +29,30 @@
 .title {
     font-size: xx-large;
     font-weight: bolder;
+    line-height: 1.15;
 
-    margin-top: 5%;
-    margin-bottom: 0%;
+    margin-top: 1.25rem;
+    margin-bottom: 0.25rem;
     margin-left: 0%;
     margin-right: 5%;
 }
 
 .subtitle {
-    margin-top: 0%;
-    margin-bottom: 5%;
+    line-height: 1.35;
+
+    margin-top: 0.15rem;
+    margin-bottom: 0%;
     margin-left: 0%;
     margin-right: 5%;
 }
 
+.subtitle + .subtitle {
+    margin-top: 0.4rem;
+}
+
 .desc {
     font-size: medium;
+    margin-top: 2rem;
     margin-bottom: 5%;
     margin-left: 0%;
     margin-right: 0%;
