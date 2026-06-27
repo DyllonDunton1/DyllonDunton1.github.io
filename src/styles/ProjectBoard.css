@@ -1,21 +1,28 @@
 .projectBoard {
     width: 100%;
     
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
 
+.projectBoard .tileBase {
+    width: 100%;
+    margin-top: 0;
+}
+
+.projectBoard .featuredTile {
+    grid-column: span 2;
 }
 
 @media (max-width: 768px) {
     .projectBoard {
         width: 100%;
-        
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
 
+    .projectBoard .featuredTile {
+        grid-column: span 1;
     }
 }
