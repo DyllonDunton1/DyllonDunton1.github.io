@@ -17,6 +17,9 @@ export const CURRENT_FOCUS = [
   'Embedded Control',
   'Real Robot Testing',
 ]
+export const ACTIVELY_LEARNING = [
+  'Rust',
+]
 
 export const PROFILE_LINES = [
   'Robotics & Applied ML Engineer',
