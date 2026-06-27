@@ -45,6 +45,23 @@ const pairedImageStyle = {
   objectFit: 'cover' as const,
 }
 
+const imageTripleStyle = {
+  width: '100%',
+  display: 'flex',
+  flexDirection: 'row' as const,
+  gap: '1rem',
+  justifyContent: 'center',
+  alignItems: 'stretch',
+  flexWrap: 'wrap' as const,
+}
+
+const tripleImageStyle = {
+  ...mediaStyle,
+  flex: '1 1 16rem',
+  maxWidth: '31%',
+  objectFit: 'cover' as const,
+}
+
 const Eskate = () => {
   return (
     <div className='top'>
@@ -54,7 +71,7 @@ const Eskate = () => {
       <div className='mainScroller'>
         
         <div style={mediaContainerStyle}>
-          <img src='/eskate/eskat_full_view.jpeg' style={mediaStyle} alt='Electric skateboard V2 full board view'></img>
+          <img src='/eskate/eskate_full_view.jpeg' style={mediaStyle} alt='Electric skateboard V2 full board view'></img>
         </div>
         <br /><br />
 
@@ -73,8 +90,12 @@ const Eskate = () => {
           </p>
           <br />
           <p>
-            The current photos show the full V2 board, handheld controller, drivetrain/enclosure area, open electronics enclosure, and combined power switch / charge port. A motion GIF can be added later once outdoor riding footage is recorded.
+            V2 reaches about 20 mph at the top end and has about a 12-mile range at moderate riding speeds. The current photos show the full V2 board, V1-to-V2 design comparison, handheld controller, open electronics enclosure, and combined power switch / charge port. A motion GIF can be added here later once outdoor riding footage is recorded.
           </p>
+          <br />
+          <div style={mediaContainerStyle}>
+            <img src='/eskate/eskate_v2_media_placeholder.svg' style={{...mediaStyle, maxWidth: '85%'}} alt='Electric skateboard V2 future ride footage placeholder'></img>
+          </div>
           <br /><br />
 
           <div style={{width: '100%', display: 'flex', justifyContent: 'center'}}>
@@ -101,6 +122,10 @@ const Eskate = () => {
                 <tr>
                   <td style={tableCellStyle}>Power System</td>
                   <td style={tableCellStyle}>12s3p battery pack with board-mounted charging port</td>
+                </tr>
+                <tr>
+                  <td style={tableCellStyle}>Performance</td>
+                  <td style={tableCellStyle}>About 20 mph top speed and about 12 miles of moderate-speed range</td>
                 </tr>
                 <tr>
                   <td style={tableCellStyle}>Control</td>
@@ -132,10 +157,6 @@ const Eskate = () => {
           <p>
             V2 was a full redesign rather than a small revision. The goal was to solve the problems from V1 by improving speed, range, power delivery, charging convenience, weather resistance, and maintainability. The result is a cleaner and more capable board that better reflects the kind of practical engineering tradeoffs needed for real hardware.
           </p>
-          <br />
-          <div style={mediaContainerStyle}>
-            <img src='/eskate/eskate_controller.jpeg' style={{...mediaStyle, maxWidth: '75%'}} alt='Electric skateboard V2 handheld controller'></img>
-          </div>
           <br /><br />
 
           <h2>Power and Drive System</h2>
@@ -145,12 +166,17 @@ const Eskate = () => {
           </p>
           <br />
           <p>
-            The battery pack is a 12s3p configuration, and the board charges through a mounted port instead of requiring battery removal. Power is routed to the ESC through embedded copper braids hidden under the grip tape, which keeps high-current wiring cleaner, reduces exposed cabling, and allows the deck to flex without a rigid external wire run.
+            The V1-to-V2 comparison shows the practical packaging change: V1 used separate external boxes and required battery removal, while V2 consolidates the electronics into a cleaner board-mounted system with integrated charging and more careful power routing.
           </p>
           <br />
-          <div style={mediaContainerStyle}>
-            <img src='/eskate/eskate_enclosure_drivetrain.jpeg' style={mediaStyle} alt='Electric skateboard V2 enclosure and drivetrain area'></img>
+          <div style={imagePairStyle}>
+            <img src='/eskate/eskate_full_view_upright_v1.jpeg' style={pairedImageStyle} alt='Electric skateboard V1 upright view'></img>
+            <img src='/eskate/eskate_full_view_upright_v2.jpeg' style={pairedImageStyle} alt='Electric skateboard V2 upright view'></img>
           </div>
+          <br />
+          <p>
+            The battery pack is a 12s3p configuration, and the board charges through a mounted port instead of requiring battery removal. Power is routed to the ESC through embedded copper braids hidden under the grip tape, which keeps high-current wiring cleaner, reduces exposed cabling, and allows the deck to flex without a rigid external wire run.
+          </p>
           <br /><br />
 
           <h2>Electronics and Control</h2>
@@ -163,8 +189,10 @@ const Eskate = () => {
             The board-mounted charge port and power switch make the system easier to use than V1, where the battery had to be removed for charging. That usability change was one of the major goals of the V2 rebuild.
           </p>
           <br />
-          <div style={mediaContainerStyle}>
-            <img src='/eskate/eskate_power_switch_and_charge_port.jpeg' style={{...mediaStyle, maxWidth: '85%'}} alt='Electric skateboard V2 power switch and charge port'></img>
+          <div style={imageTripleStyle}>
+            <img src='/eskate/eskate_open_enclosure.jpeg' style={tripleImageStyle} alt='Electric skateboard V2 open electronics enclosure'></img>
+            <img src='/eskate/eskate_controller.jpeg' style={tripleImageStyle} alt='Electric skateboard V2 handheld controller'></img>
+            <img src='/eskate/eskate_power_switch_and_charge_port.jpeg' style={tripleImageStyle} alt='Electric skateboard V2 power switch and charge port'></img>
           </div>
           <br />
           <p>
@@ -175,23 +203,18 @@ const Eskate = () => {
           <h2>Mechanical Packaging and Weather Resistance</h2>
           <br />
           <p>
-            The electronics are housed in a 3D-printed enclosure bolted to the board. The enclosure uses a TPU gasket and silicone sealing to improve water resistance, and both the lid and base are coated with rubber spray for additional protection. The lid is removable and fastened with heat-set metal inserts, which makes repeated service much more reliable than threading directly into plastic.
+            The electronics are housed in a 3D-printed enclosure bolted to the board. The enclosure uses a TPU gasket and silicone sealing to improve water resistance, and both the lid and base are coated with rubber spray for additional protection. I also siliconed around the seam where the enclosures meet the board so water could not easily wick into the enclosure from the deck interface.
           </p>
           <br />
           <p>
-            Cable exits are reinforced with brass bushings and protected with heat shrink to reduce wear and help prevent water ingress. These details are small, but they matter for hardware that is expected to survive vibration, road debris, flexing, moisture, and repeated handling.
+            The lid is removable and fastened with heat-set metal inserts, which makes repeated service much more reliable than threading directly into plastic. Cable exits are reinforced with brass bushings and protected with heat shrink to reduce wear and help prevent water ingress. These details are small, but they matter for hardware that is expected to survive vibration, road debris, flexing, moisture, and repeated handling.
           </p>
-          <br />
-          <div style={imagePairStyle}>
-            <img src='/eskate/eskate_open_enclosure.jpeg' style={pairedImageStyle} alt='Electric skateboard V2 open electronics enclosure'></img>
-            <img src='/eskate/eskate_v2_side.jpg' style={pairedImageStyle} alt='Electric skateboard V2 side profile'></img>
-          </div>
           <br /><br />
 
           <h2>Real-World Use and Limitations</h2>
           <br />
           <p>
-            V2 has been used as a real warm-weather commuting board. It is faster, smoother, easier to charge, and more practical than V1. The design is still a personal build rather than a commercial product, so future improvements would focus on cleaner documentation, more formal electrical protection notes, and updated ride footage showing the final hardware in use.
+            V2 has been used as a real warm-weather commuting board. It reaches about 20 mph at the top end, has about a 12-mile range at moderate speed, and is faster, smoother, easier to charge, and more practical than V1. The design is still a personal build rather than a commercial product, so future improvements would focus on cleaner documentation, more formal electrical protection notes, and updated ride footage showing the final hardware in use.
           </p>
           <br />
           <p>
