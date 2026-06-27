@@ -50,6 +50,14 @@
     margin-top: 0.4rem;
 }
 
+.heroGithubLink {
+    display: inline-block;
+    font-size: 0.85rem;
+    line-height: 1.2;
+    margin-top: 0.45rem;
+    margin-bottom: 0.25rem;
+}
+
 .desc {
     font-size: medium;
     margin-top: 2rem;
