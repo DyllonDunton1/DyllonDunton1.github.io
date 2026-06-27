@@ -43,6 +43,10 @@ const SlambotCharlie = () => {
             This project is a personal robotics platform built to test practical SLAM and embedded control on real hardware. Charlie uses a Raspberry Pi 4B for the high-level ROS 2 stack, including LiDAR, camera, mapping, dashboard, and robot bringup. A Teensy 4.1 handles the lower-level motor control, encoder feedback, and serial communication. The final system can drive under closed-loop wheel control, stream a live camera feed, build maps with SLAM Toolbox, expose debug data, and support field testing through a custom browser dashboard.
           </p>
           <br />
+          <p>
+            Current focus: Charlie’s second iteration is centered on localization improvements through IMU integration, sensor fusion, robot_localization EKF tuning, and repeat loop-closure validation on the same hallway mapping route.
+          </p>
+          <br />
 
           <div style={{width: '100%', display: 'flex', justifyContent: 'center'}}>
             <table style={{borderCollapse: 'collapse', textAlign: 'center', minWidth: '20rem'}}>
@@ -105,7 +109,7 @@ const SlambotCharlie = () => {
           </p>
           <br />
           <div style={{width: '100%', height: 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center'}}>
-            <img src='/slambot_charlie/charlie_hardware_diagram.png' style={mediaStyle} alt='Hardware architecture flowchart for Slambot Charlie'></img>
+            <img src='/slambot_charlie/charlie_hardware_diagram.png' loading='lazy' style={mediaStyle} alt='Hardware architecture flowchart for Slambot Charlie'></img>
           </div>
           <br /><br />
           <p>
@@ -113,7 +117,7 @@ const SlambotCharlie = () => {
           </p>
           <br />
           <div style={{width: '100%', height: 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center'}}>
-            <img src='/slambot_charlie/charlie_software_diagram.png' style={mediaStyle} alt='Software architecture flowchart for Slambot Charlie'></img>
+            <img src='/slambot_charlie/charlie_software_diagram.png' loading='lazy' style={mediaStyle} alt='Software architecture flowchart for Slambot Charlie'></img>
           </div>
           <br /><br />
 
@@ -128,7 +132,7 @@ const SlambotCharlie = () => {
           </p>
           <br />
           <div style={{width: '100%', height: 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center'}}>
-            <img src='/slambot_charlie/charlie_aerial_view.jpg' style={mediaStyle} alt='Aerial view of Slambot Charlie hardware layout'></img>
+            <img src='/slambot_charlie/charlie_aerial_view.jpg' loading='lazy' style={mediaStyle} alt='Aerial view of Slambot Charlie hardware layout'></img>
           </div>
           <br /><br />
 
@@ -139,7 +143,7 @@ const SlambotCharlie = () => {
           </p>
           <br />
           <div style={{width: '100%', height: 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center'}}>
-            <img src='/slambot_charlie/charlie_dashboard.png' style={mediaStyle} alt='Slambot Charlie web dashboard showing map, camera feed, controls, and status'></img>
+            <img src='/slambot_charlie/charlie_dashboard.png' loading='lazy' style={mediaStyle} alt='Slambot Charlie web dashboard showing map, camera feed, controls, and status'></img>
           </div>
           <br />
           <p>
@@ -154,14 +158,14 @@ const SlambotCharlie = () => {
           </p>
           <br />
           <div style={{width: '100%', height: 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center'}}>
-            <video controls muted playsInline style={mediaStyle} aria-label='Slambot Charlie field mapping trial video shown at 64x speed'>
+            <video controls muted playsInline preload='metadata' style={mediaStyle} aria-label='Slambot Charlie field mapping trial video shown at 64x speed'>
               <source src='/slambot_charlie/charlie_map_barrows_no_audio.mp4' type='video/mp4' />
             </video>
             <p style={captionStyle}>Field mapping trial video shown at 64x speed.</p>
           </div>
           <br />
           <div style={{width: '100%', height: 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center'}}>
-            <img src='/slambot_charlie/charlie_barrows_map.png' style={mediaStyle} alt='Final SLAM map from the second-floor loop mapping trial'></img>
+            <img src='/slambot_charlie/charlie_barrows_map.png' loading='lazy' style={mediaStyle} alt='Final SLAM map from the second-floor loop mapping trial'></img>
           </div>
           <br />
           <p>
@@ -169,7 +173,7 @@ const SlambotCharlie = () => {
           </p>
           <br />
           <div style={{width: '100%', height: 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center'}}>
-            <img src='/slambot_charlie/charlie_barrows_map_drift.png' style={mediaStyle} alt='Annotated SLAM map showing yaw drift between the beginning and end of the loop'></img>
+            <img src='/slambot_charlie/charlie_barrows_map_drift.png' loading='lazy' style={mediaStyle} alt='Annotated SLAM map showing yaw drift between the beginning and end of the loop'></img>
           </div>
           <br />
           <p>
@@ -197,8 +201,6 @@ const SlambotCharlie = () => {
           <p>
             The main limitation is yaw drift over longer loop-shaped mapping runs. That limitation is now the next engineering target rather than a vague problem: add IMU data, fuse it with wheel odometry, and rerun the same field test.
           </p>
-          <br />
-          <a className='linkDesc linker' href='https://github.com/DyllonDunton1/Slambot_Charlie'>Find the source code for this project here!</a>
         </div>
       </div>
     </div>
