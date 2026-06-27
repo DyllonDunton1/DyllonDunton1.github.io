@@ -10,6 +10,7 @@ const projects = [
         title: "Slambot Charlie: ROS 2 SLAM Robot with Web Dashboard", 
         pagePath: "/projects/slambot-charlie",
         orientation: "landscapeClear",
+        featured: true,
     },
     {
         staticUrl: "submarine/submarine_tile.png",
@@ -80,11 +81,12 @@ const ProjectBoard = () => {
           gifUrl={proj.gifUrl}
           pagePath={proj.pagePath}
           orientation={proj.orientation}
+          featured={proj.featured}
         />
       ))}
       <a href="/additional_projects/Dunton-Dyllon-Projects-June-2025.pdf"className="tileBase" download>
         <div className="tileImgContainer">
-          <img src="/additional_projects/project-page-img.png" className="tileImg"></img>
+          <img src="/additional_projects/project-page-img.png" className="tileImg" alt="Additional project page preview"></img>
         </div>
         <div className="tileInfo">
           <h2 className="tileTitle">Additional Project Page (Internship Projects I Can't Show Code For)</h2>
