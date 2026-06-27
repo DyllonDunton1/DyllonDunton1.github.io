@@ -2,8 +2,16 @@ import '../styles/ProjectBoard.css'
 import Tile from './Tile'
 
 
+interface ProjectItem {
+    staticUrl: string,
+    gifUrl: string,
+    title: string,
+    pagePath: string,
+    orientation: string,
+    featured?: boolean,
+}
 
-const projects = [
+const projects: ProjectItem[] = [
     {
         staticUrl: "slambot_charlie/charlie_side_view.jpg",
         gifUrl: "slambot_charlie/charlie_motion.gif",
