@@ -7,9 +7,15 @@ export const useLazyProjectImages = () => {
 
     const images = Array.from(mainScroller.querySelectorAll<HTMLImageElement>('img'))
     images.forEach((image, index) => {
-      if (index === 0) return
-      image.loading = 'lazy'
       image.decoding = 'async'
+
+      if (index === 0) {
+        image.loading = 'eager'
+        image.setAttribute('fetchpriority', 'high')
+        return
+      }
+
+      image.loading = 'lazy'
     })
   }, [])
 }
