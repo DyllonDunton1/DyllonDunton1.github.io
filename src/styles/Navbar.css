@@ -40,7 +40,8 @@ nav {
 }
 
 .currentFocusLabel {
-  font-weight: 700;
+  font-weight: 900;
+  color: black;
   margin-bottom: 0.2rem;
 }
 
