@@ -8,7 +8,7 @@ const TranscriptReader = () => {
 
       <div className='mainScroller'>
         <div style={{ width: '100%', height: 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center' }}>
-          <img src='/transcript/sample.jpg' style={{ border: '0.2rem solid gray', borderRadius: '0.5rem', width: '100%', textAlign: 'center' }}></img>
+          <img src='/transcript/sample.jpg' style={{ border: '0.2rem solid gray', borderRadius: '0.5rem', width: '100%', textAlign: 'center' }} alt='Sample transcript document for the transcript reader project'></img>
         </div>
         <br /><br />
 
@@ -24,7 +24,7 @@ const TranscriptReader = () => {
           <br />
           <h2>Extracting Information</h2>
           <div style={{width: '100%', height: 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center'}}>
-            <img src='/transcript/Reader_flow.png' style={{border: '0.2rem solid gray', borderRadius: '0.5rem', width: '100%', textAlign: 'center'}}></img>
+            <img src='/transcript/Reader_flow.png' style={{border: '0.2rem solid gray', borderRadius: '0.5rem', width: '100%', textAlign: 'center'}} alt='Transcript reader information extraction flow diagram'></img>
           </div>
           <br /><br />
           
@@ -42,7 +42,7 @@ const TranscriptReader = () => {
           </p>
           <br /><br />
           <div style={{width: '100%', height: 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center'}}>
-            <img src='/transcript/Safe_flow.png' style={{border: '0.2rem solid gray', borderRadius: '0.5rem', width: '100%', textAlign: 'center'}}></img>
+            <img src='/transcript/Safe_flow.png' style={{border: '0.2rem solid gray', borderRadius: '0.5rem', width: '100%', textAlign: 'center'}} alt='Transcript reader validation and repair safety flow diagram'></img>
           </div>
           <br /><br />
           <p>
@@ -50,7 +50,7 @@ const TranscriptReader = () => {
           </p>
           <br></br>
           <div style={{width: '100%', height: 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center'}}>
-            <img src='/transcript/Vote_flow.png' style={{border: '0.2rem solid gray', borderRadius: '0.5rem', width: '100%', textAlign: 'center'}}></img>
+            <img src='/transcript/Vote_flow.png' style={{border: '0.2rem solid gray', borderRadius: '0.5rem', width: '100%', textAlign: 'center'}} alt='Transcript reader multi-agent voting flow diagram'></img>
           </div>
 
 
