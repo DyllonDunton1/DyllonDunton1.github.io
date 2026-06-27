@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom'
 import '../styles/ProjectNavbar.css'
 import { useLazyProjectImages } from '../hooks/useLazyProjectImages'
 import { useMainScrollerWheel } from '../hooks/useMainScrollerWheel'
+import { preloadImages } from '../utils/preloadImages'
 import {
   ACTIVELY_LEARNING,
   CURRENT_FOCUS,
@@ -28,12 +29,29 @@ const PROJECT_GITHUB_LINKS: Record<string, string> = {
   '/projects/robocoms': 'https://github.com/DyllonDunton1/roboComs',
 }
 
+const PROJECT_HERO_PRELOADS: Record<string, string[]> = {
+  '/projects/slambot-charlie': ['/slambot_charlie/charlie_motion.gif'],
+  '/projects/windmill': ['/windmill/Intro.png'],
+  '/projects/submarine': ['/submarine/pretty_submarine.png'],
+  '/projects/carracing': ['/carracing/gifs/comparison.gif'],
+  '/projects/aerialplan': ['/aerialplan/aerialplan_banner.png'],
+  '/projects/robosoccer': ['/robosoccer/robosoccer.gif'],
+  '/projects/robocoms': ['/robocoms/robocoms.gif', '/robocoms/com_motors.gif'],
+  '/projects/transcript': ['/transcript/sample.jpg'],
+  '/projects/eskate': ['/eskate/eskate_full_view.jpeg'],
+  '/projects/cluster': ['/cluster/cluster_photo.jpg'],
+}
+
 const ProjectNavbar = () => {
   const location = useLocation()
   const isWindmillPage = location.pathname === '/projects/windmill'
 
   useMainScrollerWheel()
   useLazyProjectImages()
+
+  useEffect(() => {
+    preloadImages(PROJECT_HERO_PRELOADS[location.pathname] ?? [])
+  }, [location.pathname])
 
   useEffect(() => {
     document.querySelectorAll('.heroGithubLink').forEach((node) => node.remove())
