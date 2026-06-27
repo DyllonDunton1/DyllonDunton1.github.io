@@ -154,7 +154,7 @@ const SlambotCharlie = () => {
           </p>
           <br />
           <div style={{width: '100%', height: 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center'}}>
-            <video controls muted playsInline style={mediaStyle}>
+            <video controls muted playsInline style={mediaStyle} aria-label='Slambot Charlie field mapping trial video shown at 64x speed'>
               <source src='/slambot_charlie/charlie_map_barrows_no_audio.mp4' type='video/mp4' />
             </video>
             <p style={captionStyle}>Field mapping trial video shown at 64x speed.</p>
