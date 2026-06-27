@@ -11,6 +11,7 @@ export const CURRENT_FOCUS = [
   'ROS 2',
   'C++',
   'SLAM',
+  'Sensor Fusion',
   'Embedded Control',
   'Real Robot Testing',
 ]
