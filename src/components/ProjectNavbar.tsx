@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import '../styles/ProjectNavbar.css'
+import PublicationsBlock from './PublicationsBlock'
 import { useLazyProjectImages } from '../hooks/useLazyProjectImages'
 import { useMainScrollerWheel } from '../hooks/useMainScrollerWheel'
 import { preloadImages } from '../utils/preloadImages'
@@ -44,7 +45,6 @@ const PROJECT_HERO_PRELOADS: Record<string, string[]> = {
 
 const ProjectNavbar = () => {
   const location = useLocation()
-  const isWindmillPage = location.pathname === '/projects/windmill'
 
   useMainScrollerWheel()
   useLazyProjectImages()
@@ -104,6 +104,7 @@ const ProjectNavbar = () => {
             <p className='currentFocusLabel'>Actively Learning</p>
             <p>{ACTIVELY_LEARNING.join(' · ')}</p>
           </div>
+          <PublicationsBlock />
           <p><i className="fa-solid fa-envelope linkIcon" style={{paddingRight: '1%'}}/><span className="linker" onClick={() => {navigator.clipboard.writeText(EMAIL);alert("Email copied!");}} >{EMAIL}</span></p>
           <p style={{ marginBottom: '5%' }}><i className="fa-solid fa-location-dot linkIcon" style={{paddingRight: '2%'}}/>{LOCATION}</p>
           <p><i className="fa-brands fa-github linkIcon" style={{paddingRight: '1%'}}/>{" "}<a href={GITHUB_URL} className='linker'>{GITHUB_LABEL}</a></p>
@@ -111,23 +112,6 @@ const ProjectNavbar = () => {
           <p style={{ marginBottom: '5%' }} ><i className="fa-solid fa-file-arrow-down linkIcon" style={{paddingRight: '1%'}}/>{" "}<a href={RESUME_PATH} className='linker' download>Resume</a></p>
 
           <p><i className="fa-solid fa-house-chimney" style={{paddingRight: '0.5%'}}/>{" "}<Link to={'/#projects'} className='linker'>Back Home</Link></p>
-
-          {isWindmillPage && (
-            <div className='sidebarPublications'>
-              <p className='currentFocusLabel'>Current Publications</p>
-              <a
-                className='sidebarPublicationButton'
-                href='https://link.springer.com/article/10.1007/s00158-026-04368-w'
-                target='_blank'
-                rel='noreferrer'
-              >
-                Springer: Reduced-Order Modeling
-              </a>
-              <span className='sidebarPublicationButton sidebarPublicationButtonDisabled'>
-                Thesis Pending Digital Commons
-              </span>
-            </div>
-          )}
 
         </div>
 
