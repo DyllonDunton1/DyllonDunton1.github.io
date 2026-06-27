@@ -54,8 +54,8 @@ const projects = [
         orientation: "as_is",
     },
     {
-        staticUrl: "eskate/eskat_full_view.jpeg",
-        gifUrl: "eskate/eskat_full_view.jpeg",
+        staticUrl: "eskate/eskate_enclosure_drivetrain.jpeg",
+        gifUrl: "eskate/eskate_enclosure_drivetrain.jpeg",
         title: "Electric Skateboard V2: High-Power Electromechanical Build", 
         pagePath: "/projects/eskate",
         orientation: "landscapeClear",
