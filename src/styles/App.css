@@ -38,10 +38,17 @@ table th {
 }
 
 .tile {
-  padding: 4rem 2rem;
+  padding: 2.25rem 2rem;
   
 }
 
+.tile + .tile {
+  padding-top: 1.25rem;
+}
+
+.tile h2 {
+  margin-top: 0;
+}
 
 .tileAbout p{
   text-align: left;
@@ -49,6 +56,10 @@ table th {
 
 .tileAbout h2{
   margin-bottom: 2vh;
+}
+
+#projects h2 {
+  margin-bottom: 1.4rem;
 }
 
 
@@ -87,9 +98,14 @@ table th {
     min-height: 100vh;
   }
 
-  .tile {
+  .tile,
+  .tile + .tile {
     padding: 0;
     padding-bottom: 2rem;
+  }
+
+  #projects h2 {
+    margin-bottom: 1rem;
   }
   
 }
