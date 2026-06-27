@@ -4,6 +4,7 @@ import '../styles/ProjectNavbar.css'
 import { useLazyProjectImages } from '../hooks/useLazyProjectImages'
 import { useMainScrollerWheel } from '../hooks/useMainScrollerWheel'
 import {
+  ACTIVELY_LEARNING,
   CURRENT_FOCUS,
   EMAIL,
   GITHUB_LABEL,
@@ -79,6 +80,10 @@ const ProjectNavbar = () => {
           <div className='currentFocus'>
             <p className='currentFocusLabel'>Current Focus</p>
             <p>{CURRENT_FOCUS.join(' · ')}</p>
+          </div>
+          <div className='currentFocus'>
+            <p className='currentFocusLabel'>Actively Learning</p>
+            <p>{ACTIVELY_LEARNING.join(' · ')}</p>
           </div>
           <p><i className="fa-solid fa-envelope linkIcon" style={{paddingRight: '1%'}}/><span className="linker" onClick={() => {navigator.clipboard.writeText(EMAIL);alert("Email copied!");}} >{EMAIL}</span></p>
           <p style={{ marginBottom: '5%' }}><i className="fa-solid fa-location-dot linkIcon" style={{paddingRight: '2%'}}/>{LOCATION}</p>
