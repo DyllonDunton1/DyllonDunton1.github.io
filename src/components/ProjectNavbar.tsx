@@ -1,5 +1,4 @@
-import { useEffect } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import '../styles/ProjectNavbar.css'
 import {
   EMAIL,
@@ -14,39 +13,7 @@ import {
   RESUME_PATH,
 } from '../config/profile'
 
-const PROJECT_GITHUB_LINKS: Record<string, string> = {
-  '/projects/slambot-charlie': 'https://github.com/DyllonDunton1/Slambot_Charlie',
-  '/projects/windmill': 'https://github.com/DyllonDunton1/Offshore_Wind_AE',
-  '/projects/submarine': 'https://github.com/jacobcwildes/Submarine_Capstone',
-  '/projects/carracing': 'https://github.com/DyllonDunton1/Car-Racing-V3-DQN',
-  '/projects/aerialplan': 'https://github.com/DyllonDunton1/Height_Map_UNET',
-  '/projects/robosoccer': 'https://github.com/DyllonDunton1/Smooth_Soccer',
-  '/projects/robocoms': 'https://github.com/DyllonDunton1/roboComs',
-}
-
 const ProjectNavbar = () => {
-  const location = useLocation()
-
-  useEffect(() => {
-    document.querySelectorAll('.heroGithubLink').forEach((node) => node.remove())
-
-    const githubUrl = PROJECT_GITHUB_LINKS[location.pathname]
-    if (!githubUrl) return
-
-    const mainScroller = document.querySelector('.mainScroller')
-    const heroElement = mainScroller?.firstElementChild
-    if (!mainScroller || !heroElement) return
-
-    const heroLink = document.createElement('a')
-    heroLink.className = 'heroGithubLink'
-    heroLink.href = githubUrl
-    heroLink.target = '_blank'
-    heroLink.rel = 'noreferrer'
-    heroLink.innerHTML = '<i class="fa-brands fa-github" aria-hidden="true"></i><span>GitHub Repository</span>'
-
-    mainScroller.insertBefore(heroLink, heroElement.nextSibling)
-  }, [location.pathname])
-
   return (
       <nav>
         <div className='identify'>
