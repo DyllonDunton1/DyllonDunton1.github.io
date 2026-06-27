@@ -103,7 +103,7 @@ const ProjectNavbar = () => {
                 target='_blank'
                 rel='noreferrer'
               >
-                Springer Paper
+                Springer: Reduced-Order Modeling
               </a>
               <span className='sidebarPublicationButton sidebarPublicationButtonDisabled'>
                 Thesis Pending Digital Commons
