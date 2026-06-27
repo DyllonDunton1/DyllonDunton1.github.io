@@ -224,6 +224,35 @@ const Windmill = () => {
           </p>
           <br /><br />
 
+          <h2>Current Publications</h2>
+          <br />
+          <p>
+            The Springer publication below covers the reduced-order modeling portion of this research. The full master’s thesis extends that foundation into physics-informed autoencoder and latent diffusion forecasting; the thesis has been fully accepted by the University of Maine and is awaiting Digital Commons publication.
+          </p>
+          <br />
+
+          <div style={{width: '100%', display: 'flex', justifyContent: 'center'}}>
+            <table style={{borderCollapse: 'collapse', textAlign: 'center', minWidth: '20rem'}}>
+              <thead>
+                <tr>
+                  <th style={{border: '0.15rem solid black', padding: '0.6rem'}}>Publication</th>
+                  <th style={{border: '0.15rem solid black', padding: '0.6rem'}}>Scope</th>
+                  <th style={{border: '0.15rem solid black', padding: '0.6rem'}}>Link</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style={{border: '0.15rem solid black', padding: '0.6rem'}}>Reduced-order model of wind turbine motion</td>
+                  <td style={{border: '0.15rem solid black', padding: '0.6rem'}}>Published Springer paper covering the reduced-order modeling component of the thesis work</td>
+                  <td style={{border: '0.15rem solid black', padding: '0.6rem'}}>
+                    <a href="https://link.springer.com/article/10.1007/s00158-026-04368-w" target="_blank" rel="noreferrer">Springer / DOI: 10.1007/s00158-026-04368-w</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <br /><br />
+
           <h2>Technologies Used</h2>
           <br />
 
@@ -275,7 +304,8 @@ const Windmill = () => {
           <br />
 
           <ul>
-            <li style={{marginLeft: '1rem'}}>Master’s thesis completed</li>
+            <li style={{marginLeft: '1rem'}}>Master’s thesis fully accepted by the University of Maine; Digital Commons publication pending</li>
+            <li style={{marginLeft: '1rem'}}>Springer paper published for the reduced-order modeling portion of the research</li>
             <li style={{marginLeft: '1rem'}}>Physics-informed autoencoder completed and evaluated</li>
             <li style={{marginLeft: '1rem'}}>Latent diffusion forecasting model completed and evaluated</li>
             <li style={{marginLeft: '1rem'}}>Ablation studies completed</li>
@@ -284,6 +314,15 @@ const Windmill = () => {
         </div>
 
         <div className='ContentBanner'>
+
+          <a href="https://link.springer.com/article/10.1007/s00158-026-04368-w" className="tileBase" target="_blank" rel="noreferrer">
+            <div className="tileImgContainer landscapeWhiteContainer">
+              <img src="/windmill/Intro.png" className="tileImg landscapeWhite" alt="Springer publication preview"></img>
+            </div>
+            <div className="tileInfo">
+              <h2 className="tileTitle">Springer Publication: Reduced-Order Model</h2>
+            </div>
+          </a>
 
           <a href="https://github.com/DyllonDunton1/Offshore_Wind_AE" className="tileBase" download>
             <div className="tileImgContainer">
@@ -299,7 +338,7 @@ const Windmill = () => {
               <img src="/windmill/trimmed_thesis.png" className="tileImg portraitWhite" alt="Final thesis preview"></img>
             </div>
             <div className="tileInfo">
-              <h2 className="tileTitle">Final Master’s Thesis (Preview / Awaiting Publish)</h2>
+              <h2 className="tileTitle">Final Master’s Thesis (Accepted / Awaiting Digital Commons)</h2>
             </div>
           </a>
           
