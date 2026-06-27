@@ -7,6 +7,13 @@ export const GITHUB_URL = 'https://github.com/DyllonDunton1'
 export const GITHUB_LABEL = 'DyllonDunton1'
 export const LINKEDIN_URL = 'https://www.linkedin.com/in/dyllon-dunton-47ab8b1b8/'
 export const LINKEDIN_LABEL = 'dyllon-dunton'
+export const CURRENT_FOCUS = [
+  'ROS 2',
+  'C++',
+  'SLAM',
+  'Embedded Control',
+  'Real Robot Testing',
+]
 
 export const PROFILE_LINES = [
   'Robotics & Applied ML Engineer',
