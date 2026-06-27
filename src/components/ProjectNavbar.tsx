@@ -38,11 +38,11 @@ const ProjectNavbar = () => {
     if (!mainScroller || !heroElement) return
 
     const heroLink = document.createElement('a')
-    heroLink.className = 'heroGithubLink linker'
+    heroLink.className = 'heroGithubLink'
     heroLink.href = githubUrl
     heroLink.target = '_blank'
     heroLink.rel = 'noreferrer'
-    heroLink.textContent = 'GitHub Repository'
+    heroLink.innerHTML = '<i class="fa-brands fa-github" aria-hidden="true"></i><span>GitHub Repository</span>'
 
     mainScroller.insertBefore(heroLink, heroElement.nextSibling)
   }, [location.pathname])
