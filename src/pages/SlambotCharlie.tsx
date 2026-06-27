@@ -31,7 +31,7 @@ const SlambotCharlie = () => {
         
         <div style={{width: '100%', height: 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center'}}>
           <img src='/slambot_charlie/charlie_motion.gif' style={mediaStyle} alt='Slambot Charlie driving during a motion test'></img>
-          <p style={captionStyle}>Motion showcase GIF shown at 4x speed.</p>
+          <p style={captionStyle}>*Motion showcase GIF shown at 4x speed.</p>
         </div>
         <br /><br />
 
@@ -161,7 +161,7 @@ const SlambotCharlie = () => {
             <video controls muted playsInline preload='metadata' style={mediaStyle} aria-label='Slambot Charlie field mapping trial video shown at 64x speed'>
               <source src='/slambot_charlie/charlie_map_barrows_no_audio.mp4' type='video/mp4' />
             </video>
-            <p style={captionStyle}>Field mapping trial video shown at 64x speed.</p>
+            <p style={captionStyle}>*Field mapping trial video shown at 64x speed.</p>
           </div>
           <br />
           <div style={{width: '100%', height: 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center'}}>
