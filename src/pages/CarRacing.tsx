@@ -10,7 +10,7 @@ const CarRacing = () => {
       <div className='mainScroller'>
         
         <div style={{width: '100%', height: 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center'}}>
-          <img src='/carracing/gifs/comparison.gif' style={{border: '0.2rem solid gray', borderRadius: '0.5rem', width: '100%', textAlign: 'center'}}></img>
+          <img src='/carracing/gifs/comparison.gif' style={{border: '0.2rem solid gray', borderRadius: '0.5rem', width: '100%', textAlign: 'center'}} alt='CarRacing-v3 learned driving policy comparison'></img>
         </div>
         <br /><br />
 
@@ -26,7 +26,7 @@ const CarRacing = () => {
           The CarRacingV3 environment provides 96x96 RGB images of car on the map as the state space. In order to give the model a sense of speed, A stack of the 4 most recent frames is used as the input to the agent’s brain. Each frame is converted to grayscale and cropped to a square of 80 pixels in length. Using this method, the channel dimension is no longer color, but time. This is used as an input to a Convolutional Neural Network (CNN), which converts the frames into an estimated future sum of rewards expected for all possible actions. This is accomplished through a dueling head structure. After a few convolutional layers, and flattening to a linear layer, two dueling heads are then constructed which are both fully connected to the flattened layer. The first is the Value Head, which quantifies the value of being in the current state. This is a single output. The next is the Advantage Head, which quantifies the advantage of taking each action from this state. The final layer is computed by subtracting the mean from all of the advantages, thereby normalizing them to zero, and adding in the output from the value head to each of them. This gives the Q-Value for each action.
           <br /><br />
           <div style={{width: '100%', height: 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center'}}>
-            <img src='/carracing/imgs/q_network.png' style={{border: '0.2rem solid gray', borderRadius: '0.5rem', width: '100%', textAlign: 'center'}}></img>
+            <img src='/carracing/imgs/q_network.png' style={{border: '0.2rem solid gray', borderRadius: '0.5rem', width: '100%', textAlign: 'center'}} alt='Double DQN convolutional network with dueling value and advantage heads'></img>
           </div>
           <br /><br />
 
@@ -35,7 +35,7 @@ const CarRacing = () => {
           The CarRacingV3 environment uses a continuous action space, allowing for full control of the throttle, steering, and braking. In order to use Q-learning, it was necessary to discretize the action space into a select few possible combinations of the three values. After testing, it was determined that only 9 combinations were needed. This allows the agent to perform complex trajectories while keeping the learning problem tractable.
           <br /><br />
           <div style={{width: '100%', height: 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center'}}>
-            <img src='/carracing/imgs/action_space.png' style={{border: '0.2rem solid gray', borderRadius: '0.5rem', width: '100%', textAlign: 'center'}}></img>
+            <img src='/carracing/imgs/action_space.png' style={{border: '0.2rem solid gray', borderRadius: '0.5rem', width: '100%', textAlign: 'center'}} alt='Discrete CarRacing action space combinations for steering throttle and braking'></img>
           </div>
           <br /><br />
 
@@ -62,7 +62,7 @@ const CarRacing = () => {
           A key innovation in this project is the integration of a short-horizon rollout planner that can simulate possible future trajectories to more accurately simulate the reward-to-go for each possible action. At each timestep, 9 agents are spawned in that will each take one of the 9 possible actions. Then, each agent uses the learned policy from the Q-Net to simulate an additional amount of steps. This step amount was tuned later to find an optimal value. The reward sum is then compared across all 9 trajectories to determine the optimal action. In the result of a tie, the base policy is used to generate the Q-Net’s chosen action. If that action is amongst the rollout actions that are tied, that will break the tie. If not, the chosen action is simply the lowest index in the array of actions. This dramatically improves stability during driving and allows the agent to reach the end of the track more quickly. Testing across many combinations of lookahead lengths and speed limits, the optimal combination was found to be 20 steps at a speed limit of 95 units.
           <br /><br />
           <div style={{width: '100%', height: 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center'}}>
-            <img src='/carracing/gifs/comparison.gif' style={{border: '0.2rem solid gray', borderRadius: '0.5rem', width: '100%', textAlign: 'center'}}></img>
+            <img src='/carracing/gifs/comparison.gif' style={{border: '0.2rem solid gray', borderRadius: '0.5rem', width: '100%', textAlign: 'center'}} alt='Base policy and rollout planning driving comparison in CarRacing-v3'></img>
           </div>
           <br /><br />
           <h2>Training Observations and Generalization</h2>
@@ -70,7 +70,7 @@ const CarRacing = () => {
           During early experiments, the agent became highly proficient at left turns but struggled with right turns. This was because the default CarRacing tracks tend to wind predominantly counter-clockwise. To improve generalization, I modified the training pipeline to randomly flip the vehicle orientation at the start of each episode, effectively reversing the track direction. This simple augmentation balanced the distribution of turning scenarios and improved performance across both directions.
           <br /><br />
           <div style={{width: '100%', height: 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center'}}>
-            <img src='/carracing/gifs/flip_comparison.gif' style={{border: '0.2rem solid gray', borderRadius: '0.5rem', width: '100%', textAlign: 'center'}}></img>
+            <img src='/carracing/gifs/flip_comparison.gif' style={{border: '0.2rem solid gray', borderRadius: '0.5rem', width: '100%', textAlign: 'center'}} alt='CarRacing training comparison after random track direction flipping'></img>
           </div>
           <br /><br />
 
@@ -79,9 +79,9 @@ const CarRacing = () => {
           While training the model, both the reward for each episode and the tiles visited on the track were recorded in order to monitor progress. These are plotted below. After nearly 1200 episodes, the Q-Network started to learn from its accumulated experiences and slowly improved over a total of 12000 total episodes. Expectedly, the amount of tiles visited is roughly proportional to the episode reward. This shows that the primary driver of the reward system was in fact progression through the track, and that the passive rewards only helped the agent learn more optimal strategies.
           <br /><br />
           <div style={{width: '100%', height: 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center'}}>
-            <img src='/carracing/plots/tiles_over_episodes.png' style={{border: '0.2rem solid gray', borderRadius: '0.5rem', width: '100%', textAlign: 'center'}}></img>
-            <img src='/carracing/plots/reward_over_episodes.png' style={{border: '0.2rem solid gray', borderRadius: '0.5rem', width: '100%', textAlign: 'center'}}></img>
-            <img src='/carracing/plots/rewards_and_tiles_over_episodes.png' style={{border: '0.2rem solid gray', borderRadius: '0.5rem', width: '100%', textAlign: 'center'}}></img>
+            <img src='/carracing/plots/tiles_over_episodes.png' style={{border: '0.2rem solid gray', borderRadius: '0.5rem', width: '100%', textAlign: 'center'}} alt='Tiles visited over training episodes in CarRacing-v3'></img>
+            <img src='/carracing/plots/reward_over_episodes.png' style={{border: '0.2rem solid gray', borderRadius: '0.5rem', width: '100%', textAlign: 'center'}} alt='Episode reward over training episodes in CarRacing-v3'></img>
+            <img src='/carracing/plots/rewards_and_tiles_over_episodes.png' style={{border: '0.2rem solid gray', borderRadius: '0.5rem', width: '100%', textAlign: 'center'}} alt='Combined reward and tiles visited training plot for CarRacing-v3'></img>
           </div>
           <br /><br />
           Finally, the base policy and rollout rewards are shown below. While the base policy is able to achieve an impressive score on its own, it is driving through the track sloppily. This leads it to cut corners from time to time, and manage its speed poorly, causing it to over-brake late in a turn, losing too much speed. The rollout of the base policy is seen breaking lightly just before a turn, to keep speed close to the maximum amount entering the turn. The rollout model also drives more accurate lines, which shortens the overall distance driven and allows for a higher speed through each turn while maintaining grip. These strategies are well known and used at the highest levels of professional racing. Seeing them emerge from training is a success for this environment.
