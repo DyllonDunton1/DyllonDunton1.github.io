@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import '../styles/ProjectNavbar.css'
 import {
+  CURRENT_FOCUS,
   EMAIL,
   GITHUB_LABEL,
   GITHUB_URL,
@@ -69,7 +70,11 @@ const ProjectNavbar = () => {
           <h2 style={{ color: "black"}}>Dyllon Dunton</h2>
           <p>{PROFILE_LINES[0]}</p>
           <p>{PROFILE_LINES[1]}</p>
-          <p style={{ marginBottom: '5%' }} >{PROFILE_LINES[2]}</p>
+          <p>{PROFILE_LINES[2]}</p>
+          <div className='currentFocus'>
+            <p className='currentFocusLabel'>Current Focus</p>
+            <p>{CURRENT_FOCUS.join(' · ')}</p>
+          </div>
           <p><i className="fa-solid fa-envelope linkIcon" style={{paddingRight: '1%'}}/><span className="linker" onClick={() => {navigator.clipboard.writeText(EMAIL);alert("Email copied!");}} >{EMAIL}</span></p>
           <p style={{ marginBottom: '5%' }}><i className="fa-solid fa-location-dot linkIcon" style={{paddingRight: '2%'}}/>{LOCATION}</p>
           <p><i className="fa-brands fa-github linkIcon" style={{paddingRight: '1%'}}/>{" "}<a href={GITHUB_URL} className='linker'>{GITHUB_LABEL}</a></p>
