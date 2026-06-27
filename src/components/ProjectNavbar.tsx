@@ -30,6 +30,7 @@ const PROJECT_GITHUB_LINKS: Record<string, string> = {
 
 const ProjectNavbar = () => {
   const location = useLocation()
+  const isWindmillPage = location.pathname === '/projects/windmill'
 
   useMainScrollerWheel()
   useLazyProjectImages()
@@ -93,13 +94,28 @@ const ProjectNavbar = () => {
 
           <p><i className="fa-solid fa-house-chimney" style={{paddingRight: '0.5%'}}/>{" "}<Link to={'/#projects'} className='linker'>Back Home</Link></p>
 
+          {isWindmillPage && (
+            <div className='sidebarPublications'>
+              <p className='currentFocusLabel'>Current Publications</p>
+              <a
+                className='sidebarPublicationButton'
+                href='https://link.springer.com/article/10.1007/s00158-026-04368-w'
+                target='_blank'
+                rel='noreferrer'
+              >
+                Springer Paper
+              </a>
+              <span className='sidebarPublicationButton sidebarPublicationButtonDisabled'>
+                Thesis Pending Digital Commons
+              </span>
+            </div>
+          )}
+
         </div>
 
-   
+    
     </nav>
   )
 }
-
-
 
 export default ProjectNavbar
