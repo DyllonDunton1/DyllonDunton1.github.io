@@ -1,4 +1,5 @@
 import '../styles/Navbar.css'
+import PublicationsBlock from './PublicationsBlock'
 import { useMainScrollerWheel } from '../hooks/useMainScrollerWheel'
 import {
   ACTIVELY_LEARNING,
@@ -51,6 +52,7 @@ const Navbar = () => {
           <p className='currentFocusLabel'>Actively Learning</p>
           <p>{ACTIVELY_LEARNING.join(' · ')}</p>
         </div>
+        <PublicationsBlock />
         <p><i className="fa-solid fa-envelope linkIcon" style={{paddingRight: '1%'}}/><span className="linker" onClick={() => {navigator.clipboard.writeText(EMAIL);alert("Email copied!");}} >{EMAIL}</span></p>
         <p style={{ marginBottom: '5%' }}><i className="fa-solid fa-location-dot linkIcon" style={{paddingRight: '2%'}}/>{LOCATION}</p>
         <p><i className="fa-brands fa-github linkIcon" style={{paddingRight: '1%'}}/>{" "}<a href={GITHUB_URL} className='linker'>{GITHUB_LABEL}</a></p>
@@ -62,7 +64,5 @@ const Navbar = () => {
     </nav>
   )
 }
-
-
 
 export default Navbar
