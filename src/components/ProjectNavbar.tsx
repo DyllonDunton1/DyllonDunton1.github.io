@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import '../styles/ProjectNavbar.css'
+import { useMainScrollerWheel } from '../hooks/useMainScrollerWheel'
 import {
   CURRENT_FOCUS,
   EMAIL,
@@ -27,6 +28,8 @@ const PROJECT_GITHUB_LINKS: Record<string, string> = {
 
 const ProjectNavbar = () => {
   const location = useLocation()
+
+  useMainScrollerWheel()
 
   useEffect(() => {
     document.querySelectorAll('.heroGithubLink').forEach((node) => node.remove())
