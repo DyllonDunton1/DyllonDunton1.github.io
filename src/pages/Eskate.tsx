@@ -90,11 +90,11 @@ const Eskate = () => {
           </p>
           <br />
           <p>
-            V2 reaches about 20 mph at the top end and has about a 12-mile range at moderate riding speeds. I rode it about 4 miles to school and back daily when weather permitted, so the design had to be practical enough for repeated real-world use instead of just short demos. A motion GIF can be added here later once outdoor riding footage is recorded.
+            V2 reaches about 20 mph at the top end and has about a 12-mile range at moderate riding speeds. I rode it about 4 miles to school and back daily when weather permitted, so the design had to be practical enough for repeated real-world use instead of just short demos.
           </p>
           <br />
           <div style={mediaContainerStyle}>
-            <img src='/eskate/eskate_v2_media_placeholder.svg' style={{...mediaStyle, maxWidth: '85%'}} alt='Electric skateboard V2 future ride footage placeholder'></img>
+            <img src='/eskate/eskate_vid.gif' style={{...mediaStyle, maxWidth: '85%'}} alt='Riding the Electric Skateboard V2'></img>
           </div>
           <br /><br />
 
