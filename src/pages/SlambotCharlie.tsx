@@ -24,9 +24,14 @@ const tableCellStyle = {
 const photoGridStyle = {
   width: '100%',
   display: 'grid',
-  gridTemplateColumns: 'repeat(auto-fit, minmax(16rem, 1fr))',
+  gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',
   gap: '1rem',
   alignItems: 'start',
+}
+
+const landscapePhotoStyle = {
+  ...mediaStyle,
+  width: 'min(100%, 48rem)',
 }
 
 const SlambotCharlie = () => {
@@ -117,9 +122,12 @@ const SlambotCharlie = () => {
           </p>
           <br />
           <div style={photoGridStyle}>
-            <img src='/slambot_charlie/charlie_aerial_view.jpg' loading='lazy' style={mediaStyle} alt='Aerial view of Slambot Charlie hardware layout'></img>
             <img src='/slambot_charlie/charlie_front_view.jpg' loading='lazy' style={mediaStyle} alt='Front view of Slambot Charlie'></img>
             <img src='/slambot_charlie/charlie_side_view.jpg' loading='lazy' style={mediaStyle} alt='Side view of Slambot Charlie'></img>
+          </div>
+          <br />
+          <div style={{width: '100%', display: 'flex', justifyContent: 'center'}}>
+            <img src='/slambot_charlie/charlie_aerial_view.jpg' loading='lazy' style={landscapePhotoStyle} alt='Aerial view of Slambot Charlie hardware layout'></img>
           </div>
           <br /><br />
 
